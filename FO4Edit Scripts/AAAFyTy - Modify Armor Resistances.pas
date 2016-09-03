@@ -126,7 +126,7 @@ procedure ChangeDefenceStats(eArmorRating, eResistancesContainer: IInterface;
 
 var
 	iNumberOfResistances: integer;
-	eCurrentResistance: IInterface;
+	eCurrentResistance, eAddedResistance: IInterface;
 	strCurrentResistanceName: string;
 	bEnergyResistExists, bRadiationResistExists: boolean = false;
 		
@@ -138,6 +138,8 @@ begin
 	//Same gig with radiation and bRadiationResistExists.
 	
 	//We'll use these variables further on in the procedure, to add any if they're missing (booleans will be false).
+	
+	//This is the first pass. The second pass will add any missing resists and set their values accordingly.
 	
 	if iNumberOfResistances > 0 then
 		for iCounter := 0 to ElementCount(eResistancesContainer) - 1 do begin
@@ -175,6 +177,32 @@ begin
 				end;
 			
 		end;
+	
+	if bEnergyResistExists = false then begin
+		
+		eAddedResistance := ElementAssign(eResistancesContainer, HighInteger, nil, false);
+		SetEditValue(eAddedResistance[0], 'dtEnergy [DMGT:00060A81]');
+		
+		if bIsChestArmor = false then
+			SetEditValue(eAddedResistance[1], inttostr(strtoint(strEnergyResist div 2)));
+		else
+			SetEditValue(eAddedResistance[1], strEnergyResist);
+		
+		bEnergyResistExists := true;
+	end;
+	
+	if bRadiationResistExists = false then begin
+		
+		eAddedResistance := ElementAssign(eResistancesContainer, HighInteger, nil, false);
+		SetEditValue(eAddedResistance[0], 'ddtRadiationExposure [DMGT:00060A85]');
+		
+		if bIsChestArmor = false then
+			SetEditValue(eAddedResistance[1], inttostr(strtoint(strRadiationResist div 2)));
+		else
+			SetEditValue(eAddedResistance[1], strRadiationResist);
+		
+		bEnergyResistExists := true;
+	end;
 				
 	
 	if bIsChestArmor then
@@ -195,9 +223,10 @@ begin
 	
 	if ElementExists(e, 'DAMA - Resistances') = false then
 		Add(e, 'DAMA - Resistances', false);
+		
+	eResistancesContainer := ElementBySignature(e, 'DAMA');
 	
 	eArmorRating := ElementByPath(e, 'FNAM - \Armor Rating');
-	eResistancesContainer := ElementBySignature(e, 'DAMA');
 	
 	if GetLimbOrChestPiece(e) = 'Neither' then
 		exit;
