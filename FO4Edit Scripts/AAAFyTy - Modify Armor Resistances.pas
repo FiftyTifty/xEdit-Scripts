@@ -94,29 +94,31 @@ end;
 
 function GetLimbOrChestPiece(e: IInterface): string;
 var
-	strArmorName: string = 'Neither';
+	strArmorName: string;
+	strResult: string = 'Neither';
 begin
 	
 	strArmorName := GetEditValue(ElementByPath(e, 'FULL - Name'));
 	
 	if Pos('Left Leg', strArmorName) > 0 then
-		Result := 'Limb';
+		strResult := 'Limb';
 	
 	if Pos('Right Leg', strArmorName) > 0 then
-		Result := 'Limb';
+		strResult := 'Limb';
 	
 	if Pos('Left Arm', strArmorName) > 0 then
-		Result := 'Limb';
+		strResult := 'Limb';
 	
 	if Pos('Right Arm', strArmorName) > 0 then
-		Result := 'Limb';
+		strResult := 'Limb';
 	
 	if Pos(' Helmet', strArmorName) > 0 then
-		Result := 'Limb';
+		strResult := 'Limb';
 	
 	if Pos(' Chest Piece', strArmorName) > 0 then
-		Result := 'Chest';
+		strResult := 'Chest';
 		
+	Result := strResult;
 end;
 
 
