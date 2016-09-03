@@ -124,10 +124,11 @@ procedure ChangeDefenceStats(eArmorRating, eResistancesContainer: IInterface;
 															bIsChestArmor: boolean;
 															strArmorResist, strEnergyResist, strRadiationResist: string = '1');
 
-var iNumberOfResistances: integer;
-		eCurrentResistance: IInterface;
-		strCurrentResistanceName: string;
-		bEnergyResistExists, bRadiationResistExists: boolean = false;
+var
+	iNumberOfResistances: integer;
+	eCurrentResistance: IInterface;
+	strCurrentResistanceName: string;
+	bEnergyResistExists, bRadiationResistExists: boolean = false;
 		
 begin
 	
