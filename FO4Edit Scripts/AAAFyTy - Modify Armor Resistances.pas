@@ -120,7 +120,7 @@ begin
 end;
 
 
-procedure ChangeDefenceStats(eArmorRating, eResistancesContainer: IInterface);
+procedure ChangeDefenceStats(eArmorRating, eResistancesContainer: IInterface;
 															bIsChestArmor: boolean;
 															strArmorResist, strEnergyResist, strRadiationResist: string = '1');
 
