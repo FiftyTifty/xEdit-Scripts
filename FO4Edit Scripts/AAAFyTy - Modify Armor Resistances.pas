@@ -5,7 +5,7 @@ var
 		strMarineArmor, strMetalArmor, strOperatorsArmor, strPackArmor, strRaiderArmor, strRobotArmor: string;
 		strSynthArmor, strTrapperArmor: string;
 		
-		arraystrArmors: array [0...13] of string;
+		arraystrArmors: array [0...16] of string;
 		
 		
 function Initialize: integer;
@@ -77,12 +77,12 @@ begin
 
 	strArmorName := GetEditValue(ElementByPath(e, 'FULL - Name'));
 	
-	for i := 0 to Length(arraystrArmors) do begin
+	for i := 0 to Length(arraystrArmors) - 1 do begin
 	
-		if pos(arraystrArmors[i], strArmorName) == 1 then //if the beginning of strArmorName begins with one of the strings we defined in Initialize
+		if pos(arraystrArmors[i], strArmorName) = 1 then //if the beginning of strArmorName begins with one of the strings we defined in Initialize
 			strTypeOfArmor := arraystrArmors[i]; //We know what type of armour we're looking at (leather, raider, heavy trapper, etc.)
 			
-		if strTypeOfArmor == arraystrArmors[i] then //Since we know what we're working with
+		if strTypeOfArmor = arraystrArmors[i] then //Since we know what we're working with
 			break; //Exit the "for" loop.
 			
 	end;
@@ -147,12 +147,12 @@ begin
 			if Pos('dtEnergy', strCurrentResistanceName) > 0 then
 				if bIsChestArmor then begin //If it's chest armor, don't halve the resist value.
 					SetEditValue(eCurrentResistance[1], strEnergyResist);
-					if bEnergyResistExists == false then //Since the "if Pos()" statement ran, we know that the energy resist exists.
+					if bEnergyResistExists = false then //Since the "if Pos()" statement ran, we know that the energy resist exists.
 						bEnergyResistExists := true;
 				end;
 				
 			if Pos('dtEnergy', strCurrentResistanceName) > 0 then
-				if (bIsChestArmor == false) then begin //Since it's not chest armor, halve the resist value.
+				if (bIsChestArmor = false) then begin //Since it's not chest armor, halve the resist value.
 					SetEditValue(eCurrentResistance[1], inttostr(strtoint(strEnergyResist) div 2));
 					if bEnergyResistExists = false then
 						bEnergyResistExists := true;
@@ -162,14 +162,14 @@ begin
 			if Pos('dtRadiation', strCurrentResistanceName) > 0 then
 				if bIsChestArmor then begin
 					SetEditValue(eCurrentResistance[1], strRadiationResist);
-					if bRadiationResistExists == false then //Since the "if Pos()" statement ran, we know that the radiation resist exists.
+					if bRadiationResistExists = false then //Since the "if Pos()" statement ran, we know that the radiation resist exists.
 						bRadiationResistExists := true;
 				end;
 			
 			if Pos('dtRadiation', strCurrentResistanceName) > 0 then
 				if (bIsChestArmor = false) then begin
 					SetEditValue(eCurrentResistance[1], inttostr(strtoint(strRadiationResist) div 2));
-					if bRadiationResistExists == false then
+					if bRadiationResistExists = false then
 						bRadiationResistExists := true;
 				end;
 			
@@ -191,66 +191,66 @@ begin
 
 	AddMessage('Getting the type of armor & changing the stats!');
 	
-	if ElementExists(e, 'DAMA - Resistances') == false then
+	if ElementExists(e, 'DAMA - Resistances') = false then
 		Add(e, 'DAMA - Resistances', false);
 	
 	eResistancesContainer := ElementBySignature(e, 'DAMA');
 	
-	if GetLimbOrChestPiece(e) == 'Limb' then
+	if GetLimbOrChestPiece(e) = 'Limb' then
 		bIsChestPiece := false;
 	else
 		bIsChestPiece := true;
 		
 	
-	if GetTypeOfArmor(e) == strCombatArmor then
+	if GetTypeOfArmor(e) = strCombatArmor then
 		ChangeDefenceStats(12, eResistancesContainer, bIsChestPiece, '12', '6', '3');
 	
-	if GetTypeOfArmor(e) == strDCGuardArmor then
+	if GetTypeOfArmor(e) = strDCGuardArmor then
 		ChangeDefenceStats(12, eResistancesContainer, bIsChestPiece, '12', '4', '2');
 	
-	if GetTypeOfArmor(e) == strDesciplesHeavyArmor then
+	if GetTypeOfArmor(e) = strDesciplesHeavyArmor then
 		ChangeDefenceStats(12, eResistancesContainer, bIsChestPiece, '10', '10', '6');
 		
-	if GetTypeOfArmor(e) == strDesciplesHeavyMetalArmor then
+	if GetTypeOfArmor(e) = strDesciplesHeavyMetalArmor then
 		ChangeDefenceStats(12, eResistancesContainer, bIsChestPiece, '12', '4', '10');
 	
-	if GetTypeOfArmor(e) == strDesciplesArmor then
+	if GetTypeOfArmor(e) = strDesciplesArmor then
 		ChangeDefenceStats(12, eResistancesContainer, bIsChestPiece, '8', '12', '4');
 	
-	if GetTypeOfArmor(e) == strLeatherArmor then
+	if GetTypeOfArmor(e) = strLeatherArmor then
 		ChangeDefenceStats(12, eResistancesContainer, bIsChestPiece, '6', '12', '4');
 	
-	if GetTypeOfArmor(e) == strMarineArmor then
+	if GetTypeOfArmor(e) = strMarineArmor then
 		ChangeDefenceStats(12, eResistancesContainer, bIsChestPiece, '12', '5', '11');
 	
-	if GetTypeOfArmor(e) == strMetalArmor then
+	if GetTypeOfArmor(e) = strMetalArmor then
 		ChangeDefenceStats(12, eResistancesContainer, bIsChestPiece, '12', '2', '8');
 	
-	if GetTypeOfArmor(e) == strOperatorsHeavyArmor then
+	if GetTypeOfArmor(e) = strOperatorsHeavyArmor then
 		ChangeDefenceStats(12, eResistancesContainer, bIsChestPiece, '12', '4', '6');
 	
-	if GetTypeOfArmor(e) == strOperatorsArmor then
+	if GetTypeOfArmor(e) = strOperatorsArmor then
 		ChangeDefenceStats(12, eResistancesContainer, bIsChestPiece, '6', '10', '6');
 	
-	if GetTypeOfArmor(e) == strPackArmor then
+	if GetTypeOfArmor(e) = strPackArmor then
 		ChangeDefenceStats(12, eResistancesContainer, bIsChestPiece, '2', '16', '6');
 		
-	if GetTypeOfArmor(e) == strPackHeavyArmor then
+	if GetTypeOfArmor(e) = strPackHeavyArmor then
 		ChangeDefenceStats(12, eResistancesContainer, bIsChestPiece, '8', '10', '2');
 	
-	if GetTypeOfArmor(e) == strRaiderArmor then
+	if GetTypeOfArmor(e) = strRaiderArmor then
 		ChangeDefenceStats(12, eResistancesContainer, bIsChestPiece, '10', '6', '8');
 	
-	if GetTypeOfArmor(e) == strRobotArmor then
+	if GetTypeOfArmor(e) = strRobotArmor then
 		ChangeDefenceStats(12, eResistancesContainer, bIsChestPiece, '4', '12', '12');
 	
-	if GetTypeOfArmor(e) == strSynthArmor then
+	if GetTypeOfArmor(e) = strSynthArmor then
 		ChangeDefenceStats(12, eResistancesContainer, bIsChestPiece, '2', '16', '8');
 	
-	if GetTypeOfArmor(e) == strHeavyTrapperArmor then
+	if GetTypeOfArmor(e) = strHeavyTrapperArmor then
 		ChangeDefenceStats(12, eResistancesContainer, bIsChestPiece, '12', '2', '6');
 	
-	if GetTypeOfArmor(e) == strTrapperArmor then
+	if GetTypeOfArmor(e) = strTrapperArmor then
 		ChangeDefenceStats(12, eResistancesContainer, bIsChestPiece, '6', '10', '6');
 	
 end;
