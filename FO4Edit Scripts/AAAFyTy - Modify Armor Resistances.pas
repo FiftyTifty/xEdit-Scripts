@@ -187,6 +187,7 @@ end;
 procedure GetTypeOfArmorThenChangeDefenceStats(e: IInterface);
 var
 	bIsChestPiece: boolean;
+	eArmorRating, eResistancesContainer: IInterface;
 begin
 
 	AddMessage('Getting the type of armor & changing the stats!');
@@ -194,64 +195,65 @@ begin
 	if ElementExists(e, 'DAMA - Resistances') = false then
 		Add(e, 'DAMA - Resistances', false);
 	
+	eArmorRating := ElementByPath(e, 'FNAM - \Armor Rating');
 	eResistancesContainer := ElementBySignature(e, 'DAMA');
 	
-	if GetLimbOrChestPiece(e) = 'Limb' then
-		bIsChestPiece := false;
-	else
+	if GetLimbOrChestPiece(e) = 'Chest' then
 		bIsChestPiece := true;
+	else
+		bIsChestPiece := false;
 		
 	
 	if GetTypeOfArmor(e) = strCombatArmor then
-		ChangeDefenceStats(12, eResistancesContainer, bIsChestPiece, '12', '6', '3');
+		ChangeDefenceStats(eArmorRating, eResistancesContainer, bIsChestPiece, '12', '6', '3');
 	
 	if GetTypeOfArmor(e) = strDCGuardArmor then
-		ChangeDefenceStats(12, eResistancesContainer, bIsChestPiece, '12', '4', '2');
+		ChangeDefenceStats(eArmorRating, eResistancesContainer, bIsChestPiece, '12', '4', '2');
 	
 	if GetTypeOfArmor(e) = strDesciplesHeavyArmor then
-		ChangeDefenceStats(12, eResistancesContainer, bIsChestPiece, '10', '10', '6');
+		ChangeDefenceStats(eArmorRating, eResistancesContainer, bIsChestPiece, '10', '10', '6');
 		
 	if GetTypeOfArmor(e) = strDesciplesHeavyMetalArmor then
-		ChangeDefenceStats(12, eResistancesContainer, bIsChestPiece, '12', '4', '10');
+		ChangeDefenceStats(eArmorRating, eResistancesContainer, bIsChestPiece, '12', '4', '10');
 	
 	if GetTypeOfArmor(e) = strDesciplesArmor then
-		ChangeDefenceStats(12, eResistancesContainer, bIsChestPiece, '8', '12', '4');
+		ChangeDefenceStats(eArmorRating, eResistancesContainer, bIsChestPiece, '8', '12', '4');
 	
 	if GetTypeOfArmor(e) = strLeatherArmor then
-		ChangeDefenceStats(12, eResistancesContainer, bIsChestPiece, '6', '12', '4');
+		ChangeDefenceStats(eArmorRating, eResistancesContainer, bIsChestPiece, '6', '12', '4');
 	
 	if GetTypeOfArmor(e) = strMarineArmor then
-		ChangeDefenceStats(12, eResistancesContainer, bIsChestPiece, '12', '5', '11');
+		ChangeDefenceStats(eArmorRating, eResistancesContainer, bIsChestPiece, '12', '5', '11');
 	
 	if GetTypeOfArmor(e) = strMetalArmor then
-		ChangeDefenceStats(12, eResistancesContainer, bIsChestPiece, '12', '2', '8');
+		ChangeDefenceStats(eArmorRating, eResistancesContainer, bIsChestPiece, '12', '2', '8');
 	
 	if GetTypeOfArmor(e) = strOperatorsHeavyArmor then
-		ChangeDefenceStats(12, eResistancesContainer, bIsChestPiece, '12', '4', '6');
+		ChangeDefenceStats(eArmorRating, eResistancesContainer, bIsChestPiece, '12', '4', '6');
 	
 	if GetTypeOfArmor(e) = strOperatorsArmor then
-		ChangeDefenceStats(12, eResistancesContainer, bIsChestPiece, '6', '10', '6');
+		ChangeDefenceStats(eArmorRating, eResistancesContainer, bIsChestPiece, '6', '10', '6');
 	
 	if GetTypeOfArmor(e) = strPackArmor then
-		ChangeDefenceStats(12, eResistancesContainer, bIsChestPiece, '2', '16', '6');
+		ChangeDefenceStats(eArmorRating, eResistancesContainer, bIsChestPiece, '2', '16', '6');
 		
 	if GetTypeOfArmor(e) = strPackHeavyArmor then
-		ChangeDefenceStats(12, eResistancesContainer, bIsChestPiece, '8', '10', '2');
+		ChangeDefenceStats(eArmorRating, eResistancesContainer, bIsChestPiece, '8', '10', '2');
 	
 	if GetTypeOfArmor(e) = strRaiderArmor then
-		ChangeDefenceStats(12, eResistancesContainer, bIsChestPiece, '10', '6', '8');
+		ChangeDefenceStats(eArmorRating, eResistancesContainer, bIsChestPiece, '10', '6', '8');
 	
 	if GetTypeOfArmor(e) = strRobotArmor then
-		ChangeDefenceStats(12, eResistancesContainer, bIsChestPiece, '4', '12', '12');
+		ChangeDefenceStats(eArmorRating, eResistancesContainer, bIsChestPiece, '4', '12', '12');
 	
 	if GetTypeOfArmor(e) = strSynthArmor then
-		ChangeDefenceStats(12, eResistancesContainer, bIsChestPiece, '2', '16', '8');
+		ChangeDefenceStats(eArmorRating, eResistancesContainer, bIsChestPiece, '2', '16', '8');
 	
 	if GetTypeOfArmor(e) = strHeavyTrapperArmor then
-		ChangeDefenceStats(12, eResistancesContainer, bIsChestPiece, '12', '2', '6');
+		ChangeDefenceStats(eArmorRating, eResistancesContainer, bIsChestPiece, '12', '2', '6');
 	
 	if GetTypeOfArmor(e) = strTrapperArmor then
-		ChangeDefenceStats(12, eResistancesContainer, bIsChestPiece, '6', '10', '6');
+		ChangeDefenceStats(eArmorRating, eResistancesContainer, bIsChestPiece, '6', '10', '6');
 	
 end;
 
