@@ -72,7 +72,7 @@ end;
 
 function GetTypeOfArmor(e: IInterface): string;
 var
-	strTypeOfArmor, strArmorName: string;
+	strTypeOfArmor, strArmorName: string = 'Not to be processed';
 begin
 
 	strArmorName := GetEditValue(ElementByPath(e, 'FULL - Name'));
@@ -94,7 +94,7 @@ end;
 
 function GetLimbOrChestPiece(e: IInterface): string;
 var
-	strArmorName: string;
+	strArmorName: string = 'Neither';
 begin
 	
 	strArmorName := GetEditValue(ElementByPath(e, 'FULL - Name'));
@@ -199,11 +199,16 @@ begin
 	eArmorRating := ElementByPath(e, 'FNAM - \Armor Rating');
 	eResistancesContainer := ElementBySignature(e, 'DAMA');
 	
+	if GetLimbOrChestPiece(e) = 'Neither' then
+		exit;
+	
 	if GetLimbOrChestPiece(e) = 'Chest' then
 		bIsChestPiece := true;
 	else
 		bIsChestPiece := false;
 		
+	if GetTypeOfArmor(e) = 'Not to be processed' then
+		exit;
 	
 	if GetTypeOfArmor(e) = strCombatArmor then
 		ChangeDefenceStats(eArmorRating, eResistancesContainer, bIsChestPiece, '12', '6', '3');
@@ -258,9 +263,8 @@ begin
 	
 end;
 
+
 function Process(e: IInterface): integer;
-var
-	eArmorRating: IInterface;
 begin
 	
 	if Signature(e) <> 'ARMO' then
