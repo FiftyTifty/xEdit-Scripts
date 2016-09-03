@@ -1,0 +1,179 @@
+==RaiderRules==
+Priority_1 = DamageResist_Highest
+Priority_2 = EnergyResist_Medium
+Priority_3 = ExplosResist_Low
+
+Armor_Arm = +7 +3 +1
+Armor_Leg = +7 +3 +1
+Armor_Torso = +12 +8 +4
+
+sizeLimb A = +8 +6 +3
+sizeLimb B = +9 +6 +3
+sizeLimb C = +10 +6 +3
+
+sizeTorso A = +12 +8 +4
+sizeTorso B = +14 +10 +5
+sizeTorso C = +16 +12 +6
+
+Standard_0 = +5 +2 +1
+Welded_1 = +6 +3 +1
+Tempered_2 = +7 +4 +2
+Hardened_3 = +8 +5 +2
+Buttressed_4 = +9 +6 +3
+==End==
+
+
+==Leather Rules==
+Priority_1 = DamageResist_Medium
+Priority_2 = EnergyResist_Highest
+Priority_3 = ExplosResist_Low
+
+Armor_Arm = +3 +7 +1
+Armor_Leg = +3 +7 +1
+Armor_Torso = +8 +12 +4
+
+sizeLimb A = +6 +8 +3
+sizeLimb B = +6 +9 +3
+sizeLimb C = +6 +10 +3
+
+sizeTorso A = +8 +12 +4
+sizeTorso B = +10 +14 +5
+sizeTorso C = +12 +16 +6
+
+Standard_0 = +2 +6 +1
+BoiledLeather_1 = +3 +7 +1
+GirdedLeather_2 = +4 +8 +2
+TreatedLeather_3 = +5 +9 +2
+ShadowedLeather_4 = +6 +10 +3
+StuddedLeather_5 = +7 +11 +3
+==End=
+
+
+==MetalRules==
+Priority_1 = DamageResist_Highest
+Priority_2 = EnergyResist_High
+Priority_3 = ExplosResist_Medium
+
+Armor_Arm = +7 +6 +3
+Armor_Leg = +7 +6 +3
+Armor_Torso = +12 +11 +5
+
+sizeLimb A = +8 +7 +3
+sizeLimb B = +9 +8 +4
+sizeLimb C = +10 +9 +4
+
+sizeTorso A = +12 +11 +5
+sizeTorso B = +14 +13 +6
+sizeTorso C = +16 +15 +7
+
+Standard_0 = +4 +3 +1
+Painted_1 = +5 +4 +2
+Enameled_2 = +6 +5 +2
+Shadowed_3 = +8 +7 +3
+Alloyed_4 = +9 +8 +4
+Polished_5 = +10 +9 +4
+==End=
+
+
+==Synth Rules==
+Priority_1 = DamageResist_Medium
+Priority_2 = EnergyResist_Highest
+Priority_3 = ExplosResist_High
+
+Armor_Arm = +3 +7 +6
+Armor_Leg = +3 +7 +6
+Armor_Torso = +8 +12 +10
+
+sizeLimb A = +6 +8 +7
+sizeLimb B = +6 +9 +8
+sizeLimb C = +6 +10 +9
+
+sizeTorso A = +8 +12 +11
+sizeTorso B = +10 +14 +13
+sizeTorso C = +12 +16 +15
+==End=
+
+
+==CombatRules==
+Priority_1 = DamageResist_Highest
+Priority_2 = EnergyResist_Medium
+Priority_3 = ExplosResist_High
+
+Armor_Arm = +7 +3 +6
+Armor_Leg = +7 +3 +6
+Armor_Torso = +12 +5 +11
+
+sizeLimb A = +8 +3 +7
+sizeLimb B = +9 +4 +8
+sizeLimb C = +10 +4 +9
+
+sizeTorso A = +12 +5 +11
+sizeTorso B = +14 +6 +13
+sizeTorso C = +16 +7 +15
+==End=
+
+
+==DCGuardRules==
+Priority_1 = DamageResist_Highest
+Priority_2 = EnergyResist_High
+Priority_3 = None
+
+Armor_Arm = +10 +9
+Armor_Leg = +10 +9
+Armor_Torso = +16 +15
+==End==
+
+
+==RobotRules==
+Priority_1 = DamageResist_Medium
+Priority_2 = EnergyResist_Highest
+Priority_3 = ExplosResist_Highest
+
+Armor_Arm = +3 +7 +7
+Armor_Leg = +3 +7 +7
+Armor_Torso = +5 +12 +12
+
+sizeLimb A = +3 +8 +8
+sizeLimb B = +4 +9 +9
+sizeLimb C = +4 +10 +10
+
+sizeTorso A = +5 +12 +12
+sizeTorso B = +6 +14 +14
+sizeTorso C = +7 +15 +15
+==End==
+
+
+==TrapperRules==
+Priority_1 = DamageResist_Highest
+Priority_2 = EnergyResist_Medium
+Priority_3 = ExplosResist_Medium
+
+Armor_Arm = +7 +3 +3
+Armor_Leg = +7 +3 +3
+Armor_Torso = +12 +8 +8
+
+sizeLimb A = +8 +6 +6
+sizeLimb B = +10 +6 +6
+
+sizeTorso A = +12 +8 +8
+sizeTorso B = +16 +12 +12
+==End=
+
+
+==MarineRules==
+Priority_1 = DamageResist_Highest
+Priority_2 = EnergyResist_Medium
+Priority_3 = ExplosResist_High
+
+Armor_Arm = +7 +3 +6
+Armor_Leg = +7 +3 +6
+Armor_Torso = +12 +5 +11
+
+sizeLimb A = +8 +3 +7
+sizeLimb B = +9 +4 +8
+sizeLimb C = +10 +4 +9
+
+sizeTorso A = +12 +5 +11
+sizeTorso B = +14 +6 +13
+sizeTorso C = +16 +7 +15
+==End=

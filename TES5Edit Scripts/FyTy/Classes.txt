@@ -1,0 +1,26 @@
+SoldierImperialNotGuard "Imperial Soldier" [CLAS:0001327F]
+Light Armor + Heavy Armor + 1Handed + 2Handed
+
+CombatWarrior2H "Warrior" [CLAS:0001CE15]
+2Handed + Heavy Armor + Archery + Block
+
+GuardImperial "Guard" [CLAS:000253F2]
+1Handed + Light Armor + Heavy Armor + Block
+
+CWSoldierClass "Soldier" [CLAS:0010B1D8]
+1Handed + 2Handed + Archery + Block + Heavy Armor + Light Armor
+
+CombatSpellsword "Spellsword" [CLAS:00013177]
+1Handed + Heavy Armor + Destruction + Restoration
+
+EncClassForswornShaman "Forsworn Shaman" [CLAS:00043BCC]
+Destruction + Conjuration + Restoration + Alteration
+
+CombatRanger "Ranger" [CLAS:00013181]
+Archery + Light Armor + Block + 1Handed
+
+EncClassThalmorMelee "Thalmor Warrior" [CLAS:0007289D]
+1Handed + Block + Light Armor + Restoration
+
+TrainerDestructionMaster "Sorcerer" [CLAS:000E3A73]
+Destruction + Restoration + 1Handed + Heavy Armor

@@ -1,0 +1,5 @@
+LSpellWEBattlemageWardLeftHand [LVSP:00105102]
+HealingLeftHand "Healing" [SPEL:00034C38]
+HealingRightHand "Healing" [SPEL:0008CB03]
+CloseWounds "Close Wounds" [SPEL:000B62EF]
+CloseWoundsLeftHand "Close Wounds" [SPEL:000F95EB]

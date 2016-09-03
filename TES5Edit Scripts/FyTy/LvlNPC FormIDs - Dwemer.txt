@@ -1,0 +1,5 @@
+EncDwarvenSpider02 [NPC_:00023A98]
+EncDwarvenSpider01 [NPC_:0010EC86]
+LvlDwarvenSphere [NPC_:0010EC92]
+LvlDwarvenSpider [NPC_:0010EC91]
+LvlDwarvenSpiderUseWeapon [NPC_:000A218F]

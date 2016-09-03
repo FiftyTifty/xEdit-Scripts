@@ -1,0 +1,3 @@
+OakfleshLeftHand "Oakflesh" [SPEL:00072315]
+StonefleshLeftHand "Stoneflesh" [SPEL:00072316]
+IronfleshLeftHand "Ironflesh" [SPEL:00072317]
