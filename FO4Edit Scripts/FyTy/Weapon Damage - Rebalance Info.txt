@@ -1,0 +1,9 @@
+==Min damage==
+For melee weapons - 80 damage
+For guns - 50 damage
+Plasma - 50 damage + 40 energy
+Laser - 70 energy
+
+==Default damage==
+Machete - 14
+Pipe pistol - 13

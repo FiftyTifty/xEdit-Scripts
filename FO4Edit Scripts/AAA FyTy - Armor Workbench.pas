@@ -19,6 +19,9 @@ begin
 	exit;
 
 //  AddMessage('Processing: ' + FullPath(e));
+
+	if ElementExists(e, 'BNAM - Workbench Keyword') = 0 then
+		exit;
   
   ePath := ElementByPath(e, 'BNAM - Workbench Keyword');
 	ePath02 := ElementByPath(e, 'FNAM - Category\Keyword #0');
@@ -33,7 +36,7 @@ begin
 		SetEditValue(ePath, 'WorkbenchCooking [KYWD:00102152]');
 
 	if bArmorsmithBox then
-		SetEditValue(ePath, 'AECArmorsmithExtendedCraftingKey [KYWD:0200081F]');
+		SetEditValue(ePath, 'AEC_ck_ArmorsmithCraftingKey [KYWD:08000851]');
 		
 	if bChangeCategory then
 		SetEditValue(ePath02, '00_RecipeCalyps "Cutoffs" [KYWD:020008C2]');
