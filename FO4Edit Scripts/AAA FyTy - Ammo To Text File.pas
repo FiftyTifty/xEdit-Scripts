@@ -8,6 +8,14 @@ unit userscript;
 		So make sure to remove it with your favourite text editor.
 	}
 	
+{
+	When we define variables outside of any functions and procedures, we are declaring "global" variables.
+	These don't get "reset" once a function or procedure finishes. These are best used as variables you don't really change that often.
+	Otherwise, you're going to have to undertake a huge amount of tedium with error checking, and ensuring that they have valid data.
+	
+	Much easier to just use local variables.
+}
+
 var
 	tstrlistAmmoFormIDs: TStringList;
 	strTextFileName: string;
@@ -22,8 +30,9 @@ end;
 
 
 function Process(e: IInterface): integer;
-var
-	strFullFormID: string;
+var // Notice how this comes immediately after a function/procedure. This makes it a local variable.
+	strFullFormID: string; // When Process() finishes, this string variable will have it's value cleared
+	// So make sure it is given a value inside the procedure.
 begin
 	
 	if Signature(e) <> 'AMMO' then // If the selected record is not an AMMO record

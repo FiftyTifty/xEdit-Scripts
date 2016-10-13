@@ -8,8 +8,9 @@ unit userscript;
 		workbench.
 	}
 
-var
-	strKeyword, strRef: string;
+var // As this "var" block isn't following a Procedure/Function, these variables are known as global variables.
+	strKeyword, strRef: string; // These strings are global vars, so they won't be cleared when a parent function or procedure finishes
+	//Since they don't have a parent function/procedure.
 	
 	{
 		What makes scripts a nightmare to read, or fairly intuitive, are the variable names.
@@ -33,7 +34,7 @@ function Process(e: IInterface): integer;
 		If we have selected more than one record in FO4Edit, the "Process" function will be run on each one.
 	}
 	
-var
+var // Notice how this "var" block follows the Process function? These are cleared once the function finishes it's last line of code.
 	eLinkedRefsContainer, eLinkedRef: IInterface;
 	iCounter: integer; // Rather than using an integer called "i", I prefer iCounter for my loops. Much better, right?
 	bExisted: boolean;

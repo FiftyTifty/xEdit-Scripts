@@ -13,6 +13,10 @@ unit userscript;
 }
 
 var
+	{
+		Since this "var" block isn't parented by a function or a procedure, they will stay at whatever value they are set in the script.
+		Unlike "local" variables, which are cleared when their parent function/procedure reaches it's "end;" statement.
+	}
 	eRoadLeathers, eArmourOffsets: IInterface;
 	Fallout4File: IInterface;
 

@@ -20,6 +20,10 @@ unit userscript;
 }
 
 var
+	{
+		Since this "var" block preceeds the script's Functions and Procedures, these become global variables.
+		They aren't cleared after their parent function/procedure finishes.
+	}
 	fileDestination, eBaseList: IInterface;
 	iTally, iPosFoundStr: integer;
 	strEDID, strFind: string;
@@ -53,7 +57,7 @@ Procedure ProcessTheAmmo;
 		Since we want to create records, and have no need for any existing ones, I removed the default "Process" function.
 		And in it's stead, I call ProcessTheAmmo() from that lovely Initialize function; the one called at the beginning of every script.
 	}
-var
+var // These are "local" variables. These are cleared once the parent Procedure/Function finishes.
 	eCurrentList, eCurrentEntries, eCurrentEntry: IInterface;
 	
 	iCounter, iSubCounter: integer;
