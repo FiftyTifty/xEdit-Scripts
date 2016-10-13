@@ -97,7 +97,7 @@ begin
 			 We will use iSubCounter as a multiplier, which is why we're not using (iSubCounter := 0), and since we already have the initial
 			 entry, we'll create the second and third entries.
 			 
-			 And we will use iSubCounter as a multiplie for the number of bullets.
+			 And we will use iSubCounter as a multiplier for the number of bullets.
 			 }
 			
 			eCurrentEntry := ElementAssign(eCurrentEntries, HighInteger, nil, false);
