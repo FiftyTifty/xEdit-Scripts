@@ -1,0 +1,6 @@
+Auto Pistol - 15
+Auto Rifle - 13
+Pistol - 11
+Rifle - 9
+Sniper - 7
+Shotgun - 5

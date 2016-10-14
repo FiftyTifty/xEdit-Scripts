@@ -1,0 +1,38 @@
+Eye Socket Shade
+Lip Color
+Rough Face
+Forehead Blemishes 1
+Forehead Blemishes 2
+Forehead Blemishes 3
+Forehead Blemishes 4
+Forehead Blemishes 5
+Forehead Blemishes 6
+Forehead Blemishes 7
+Cheek Blemishes 1
+Cheek Blemishes 2
+Cheek Blemishes 3
+Cheek Blemishes 4
+Cheek Blemishes 5
+Cheek Blemishes 6
+Cheek Blemishes 7
+Mouth Blemishes 1
+Mouth Blemishes 2
+Mouth Blemishes 3
+Mouth Blemishes 4
+Mouth Blemishes 5
+Mouth Blemishes 6
+Mouth Blemishes 7
+Pocked Neck
+Pocked Face
+Cheek Creases
+Cheeks Gaunt
+Eyes Gaunt
+Sun Scorched
+Red Nose
+Splotches - Left Cheek
+Splotches - Right Cheek
+Splotches - Left Eye
+Splotches - Right Head
+Splotches - Left Head
+Splotches - Chin
+Splotches - Neck

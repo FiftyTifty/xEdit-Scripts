@@ -1,11 +1,13 @@
 unit userscript;
 var
 	fileDestination: IInterface;
+	bCopyToFile: boolean;
 
 function Initialize: integer;
 begin
 	
-	fileDestination := FileByIndex(9);
+	fileDestination := FileByIndex(20);
+	bCopyToFile := true;
 	
 end;
 
@@ -23,9 +25,10 @@ begin
 	//if GetEditValue(ElementBySignature(e, 'RNAM')) <> 'HumanRace "Human" [RACE:00013746]' then
 		//exit;
 	
-	if OverrideCount(e) > 0 then	
-		if GetFileName(GetFile(OverrideByIndex(e, OverrideCount(e) - 1))) = 'FyTy - Armor Balance.esp' then
-			exit;
+	if bCopyToFile then
+		if OverrideCount(e) > 0 then	
+			if GetFileName(GetFile(OverrideByIndex(e, OverrideCount(e) - 1))) = 'FyTy - Armor Balance.esp' then
+				exit;
 	
   AddMessage('Processing: ' + FullPath(e));
 	
@@ -44,8 +47,10 @@ begin
 			exit; //There's no need to change the actor, so skip it.
 	}
 	
-	
-	eCopiedActor := wbCopyElementToFile(e, fileDestination, false, true);
+	if bCopyToFile then
+		eCopiedActor := wbCopyElementToFile(e, fileDestination, false, true)
+	else
+		eCopiedActor := e;
 	
 	// Change our variables to reference the override
 	eActorConfig := ElementBySignature(eCopiedActor, 'ACBS');

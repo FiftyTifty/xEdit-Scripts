@@ -7,7 +7,7 @@ var
 function Initialize: integer;
 begin
 	fileDestination := FileByIndex(9);
-	bCopyToFile := true;
+	bCopyToFile := false;
 	bEditFlags := true;
 end;
 
@@ -53,11 +53,12 @@ begin
 						Delete(strFlags, 1, 1);
 						Insert('1', strFlags, 1);
 					end;
-				{
+				
 				if bBreakFlagsLoop = false then
-					if iFlagsLength = 1 then
-						strFlags := strFlags + '1';
-				}
+					if iFlagsLength = 0 then
+						strFlags := '1';
+				
+				strFlags := '0';
 				SetEditValue(eFlags, strFlags);
 				
 			end;
