@@ -85,8 +85,8 @@ begin
 				end;
 				
 				
-			tstrlistTemplateColors.SaveToFile(strNewFolderPath + strTintGroup + ' - Colors.txt');
-			tstrlistTemplateColorIndexes.SaveToFile(strNewFolderPath + strTintGroup + ' - Color Indexes.txt');
+			tstrlistTemplateColors.SaveToFile(strNewFolderPath + strTintLayerName + ' - Colors.txt');
+			tstrlistTemplateColorIndexes.SaveToFile(strNewFolderPath + strTintLayerName + ' - Color Indexes.txt');
 			
 			tstrlistTemplateColors.Free;
 			tstrlistTemplateColorIndexes.Free;
