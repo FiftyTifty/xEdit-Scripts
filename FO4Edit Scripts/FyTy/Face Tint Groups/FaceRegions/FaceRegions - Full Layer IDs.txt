@@ -1,0 +1,7 @@
+1222 FaceRegions - Eyes mask
+1223 FaceRegions - Nose mask
+1221 FaceRegions - Forehead mask
+1224 FaceRegions - Ears mask
+1225 FaceRegions - Cheeks mask
+1226 FaceRegions - Mouth mask
+1227 FaceRegions - Neck mask

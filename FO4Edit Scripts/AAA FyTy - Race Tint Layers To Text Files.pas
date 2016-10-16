@@ -2,7 +2,8 @@ unit userscript;
 var
 	fileFallout4, eHumanRace, eTintLayerContainer: IInterface;
 	strBaseFolderPath: string;
-	tstrlistTintLayers, tstrlistTintLayerIndexes, tstrlistTemplateColors, tstrlistTemplateColorIndexes: TStringList;
+	tstrlistTintLayers, tstrlistTintLayerIndexes, tstrlistFullTintLayers,
+	tstrlistTemplateColors, tstrlistTemplateColorIndexes: TStringList;
 
 function Initialize: integer;
 begin
@@ -85,7 +86,7 @@ begin
 				end;
 				
 				
-			tstrlistTemplateColors.SaveToFile(strNewFolderPath + strTintLayerName + ' - Colors.txt');
+			tstrlistTemplateColors.SaveToFile(strNewFolderPath + strTintLayerName + ' - Color.txt');
 			tstrlistTemplateColorIndexes.SaveToFile(strNewFolderPath + strTintLayerName + ' - Color Indexes.txt');
 			
 			tstrlistTemplateColors.Free;
@@ -97,9 +98,20 @@ begin
 		end;
 		
 		
-		tstrlistTintLayerIndexes.SaveToFile(strNewFolderPath + strTintGroup + ' - Layer Indices.txt');
+		tstrlistTintLayerIndexes.SaveToFile(strNewFolderPath + strTintGroup + ' - Layer Indexes.txt');
 		tstrlistTintLayers.SaveToFile(strNewFolderPath + strTintGroup + ' - Layer Names.txt');
 		
+		
+		tstrlistFullTintLayers := TStringList.Create;
+		
+		for iSubCounter := 0 to tstrlistTintLayers.Count - 1 do begin
+		
+			tstrlistFullTintLayers.Add(tstrlistTintLayerIndexes[iSubCounter] + ' ' + strTintGroup + ' - ' + tstrlistTintLayers[iSubCounter]);
+		end;
+		
+		tstrlistFullTintLayers.SaveToFile(strNewFolderPath + strTintGroup + ' - Full Layer IDs.txt');
+		
+		tstrlistFullTintLayers.Free;
 		tstrlistTintLayerIndexes.Free;
 		tstrlistTintLayers.Free;
 		

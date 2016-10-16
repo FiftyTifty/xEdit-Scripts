@@ -1,0 +1,7 @@
+1719 Markings - Freckles - Upper
+1721 Markings - Freckles - Lower
+1720 Markings - Freckles - Middle
+1722 Markings - Moles - Cheek
+1723 Markings - Moles - Full Face
+1724 Markings - Moles - Lower Face
+1725 Markings - Moles - Nose

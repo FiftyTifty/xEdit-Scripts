@@ -1,0 +1,16 @@
+1238 Brows - Thin Rounded
+1239 Brows - Average
+1241 Brows - Intense
+1242 Brows - Thick Short
+1244 Brows - Curved
+1245 Brows - Full
+1246 Brows - Average Arched
+1247 Brows - Thin Arched
+1248 Brows - Thick Straight
+1249 Brows - Thick Raised
+1486 Brows - Thick Downward
+1647 Brows - Thick Arch
+1648 Brows - Bushy
+1649 Brows - Full Arch
+1650 Brows - Overgrown
+1651 Brows - Untamed

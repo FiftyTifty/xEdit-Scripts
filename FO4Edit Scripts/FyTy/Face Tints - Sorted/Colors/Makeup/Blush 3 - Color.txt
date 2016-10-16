@@ -1,0 +1,6 @@
+None "None" [CLFM:001ABFD5]
+BlushRed "Red" [CLFM:00196658]
+black "black" [CLFM:000E6E16]
+BlushOrange "Orange" [CLFM:0022D25C]
+BlushPurple "Purple" [CLFM:0022D25E]
+BlushYellow "Yellow" [CLFM:0022D25D]

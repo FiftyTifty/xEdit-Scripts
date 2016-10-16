@@ -1,0 +1,31 @@
+1717 Blemishes - Eye Socket Shade
+1727 Blemishes - Forehead Blemishes 1
+1728 Blemishes - Forehead Blemishes 2
+1729 Blemishes - Forehead Blemishes 3
+1730 Blemishes - Forehead Blemishes 4
+1731 Blemishes - Forehead Blemishes 5
+1732 Blemishes - Forehead Blemishes 6
+1733 Blemishes - Forehead Blemishes 7
+1734 Blemishes - Cheek Blemishes 1
+1735 Blemishes - Cheek Blemishes 2
+1736 Blemishes - Cheek Blemishes 3
+1737 Blemishes - Cheek Blemishes 4
+1738 Blemishes - Cheek Blemishes 5
+1739 Blemishes - Cheek Blemishes 6
+1740 Blemishes - Cheek Blemishes 7
+1741 Blemishes - Mouth Blemishes 1
+1742 Blemishes - Mouth Blemishes 2
+1743 Blemishes - Mouth Blemishes 3
+1744 Blemishes - Mouth Blemishes 4
+1745 Blemishes - Mouth Blemishes 5
+1746 Blemishes - Mouth Blemishes 6
+1747 Blemishes - Mouth Blemishes 7
+1753 Blemishes - Sun Scorched
+1754 Blemishes - Red Nose
+1755 Blemishes - Splotches - Left Cheek
+1756 Blemishes - Splotches - Right Cheek
+1757 Blemishes - Splotches - Left Eye
+1758 Blemishes - Splotches - Right Head
+1759 Blemishes - Splotches - Left Head
+1760 Blemishes - Splotches - Chin
+1761 Blemishes - Splotches - Neck

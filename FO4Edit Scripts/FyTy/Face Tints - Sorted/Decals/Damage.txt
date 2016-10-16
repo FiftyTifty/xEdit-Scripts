@@ -1,0 +1,25 @@
+1766 Damage - Scar - Left Long
+1767 Damage - Scar - Lip Gouges
+1768 Damage - Scar - Right Brow Deep
+1769 Damage - Scar - Center Burn
+1770 Damage - Scar - Right Burn
+1771 Damage - Scar - Left Brow Gash
+1772 Damage - Scar - Middle Deep
+1773 Damage - Scar - Left Back Deep
+1774 Damage - Scar - Forehead
+1775 Damage - Scar - Left Brow Small
+1776 Damage - Scar - Nose Gouge
+1777 Damage - Scar - Nose Arch
+1778 Damage - Scar - Lip Cut
+1779 Damage - Scar - Forced Smile
+1780 Damage - Scar - Lip Scratch
+1781 Damage - Scar - Right Stitches
+1782 Damage - Scar - Right Brow Long
+1783 Damage - Scar - Right Gouge
+1784 Damage - Scar - Chin
+1785 Damage - Scar - Head Burn
+1786 Damage - Scar - Cheek Burn
+1793 Damage - Boxer - 12 Rounds
+1794 Damage - Boxer - Broken Nose
+1795 Damage - Boxer - Black Eye
+1796 Damage - Boxer - Fat Lip
