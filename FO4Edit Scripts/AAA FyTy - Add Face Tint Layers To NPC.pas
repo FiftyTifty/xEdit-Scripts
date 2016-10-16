@@ -896,7 +896,7 @@ end;
 function Finalize: integer;
 begin
 	
-	
+	FreeTheTStringLists;
 	
 end;
 
