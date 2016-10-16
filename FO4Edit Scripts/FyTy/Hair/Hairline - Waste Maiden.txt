@@ -1,0 +1,2 @@
+HairFemale30_Hairline1 "HairFemale30_Hairline1" [HDPT:001E6787]
+HairFemale30_Hairline2 "HairFemale30_Hairline2" [HDPT:001E6788]
