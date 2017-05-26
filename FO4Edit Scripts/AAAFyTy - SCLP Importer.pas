@@ -3,20 +3,11 @@ unit userscript;
 //But in an armor addon, they are normalized at 0.0.
 //Easy solution: Subtract 1.0 from the .sclp data when importing the data!
 
-type
-	recBone = record
-		strBoneName: string;
-		fScaleX, fScaleY, fScaleZ: single;
-	end;
-
-type
-	arrayRecBone = array of recBone;
-
 Const
-	strFindBoneName := '    "Name": "';
-	strFindBoneScaleX := '      "x": ';
-	strFindBoneScaleY := '      "y": ';
-	strFindBoneScaleZ := '      "z": ';
+	strFindBoneName = '    "Name": "';
+	strFindBoneScaleX = '      "x": ';
+	strFindBoneScaleY = '      "y": ';
+	strFindBoneScaleZ = '      "z": ';
 
 
 function Initialize: integer;
@@ -31,7 +22,7 @@ begin
 	Result := strOutfitName;
 end;
 
-procedure GetFileNamesAndPaths(e: IInterface; bIsFemale: boolean;
+procedure GetOutfitFileNamesAndPaths(e: IInterface; bIsFemale: boolean;
 															 var strOutfitPath, strOutfitName: string);
 var
 	strEOutfit: string;
@@ -62,84 +53,134 @@ begin
 end;
 
 
-function GetDataFromSCLP(tstrlistSCLP: TStringList): arrayRecBone;
+procedure GetDataFromSCLP(tstrlistSCLP: TStringList; var iNumBones: integer; var tstrlistDest: TStringList);
 var
-	iCounter, iNumBones, iLength: integer;
-	arrayBones: arrayRecBone;
+	iCounter, iLength: integer;
+	tstrlistBones: TStringList;
 	strName, strScaleX, strScaleY, strScaleZ: string;
 begin
 	
-	for iCounter := 0 to tstrlistSCLP.Count - 1 do begin
+	tstrlistBones := TStringList.Create;
 	
-		if Pos(strFindBoneName, tstrlistSCLP[iCounter]) > 0 then begin
-		
-			Inc(iNumBones);
-			SetLength(arrayBones, iNumBones);
+	iNumBones := 0;
+	
+	iCounter := tstrlistSCLP.Count - 1;
+	
+	while iCounter >= 0 do begin
+	
+		if Pos(strFindBoneName, tstrlistSCLP[iCounter]) = 1 then begin
 			
-			iLength := ( Length(tstrlistSCLP[iCounter]) - Length(strFindBoneName) ) - 2; //So we don't get '",'
+			iLength := ( (Length(tstrlistSCLP[iCounter]) + 2) - Length(strFindBoneName) ) - 2; //So we don't get '",'
 			strName := Copy(tstrlistSCLP[iCounter], Length(strFindBoneName), iLength);
 			
 			iLength := ( Length(tstrlistSCLP[iCounter + 2]) - Length(strFindBoneScaleX) ) - 1; // X
 			strScaleX := Copy(tstrlistSCLP[iCounter + 2], Length(strFindBoneScaleX), iLength);
 			
-			iLength := ( Length(tstrlistSCLP[iCounter + 2]) - Length(strFindBoneScaleY) ) - 1; // Y
-			strScaleY := Copy(tstrlistSCLP[iCounter + 2], Length(strFindBoneScaleX), iLength);
+			iLength := ( Length(tstrlistSCLP[iCounter + 3]) - Length(strFindBoneScaleY) ) - 1; // Y
+			strScaleY := Copy(tstrlistSCLP[iCounter + 3], Length(strFindBoneScaleY), iLength);
 			
-			iLength := ( Length(tstrlistSCLP[iCounter + 2]) - Length(strFindBoneScale|) ) - 1; // Z
-			strScaleZ := Copy(tstrlistSCLP[iCounter + 2], Length(strFindBoneScaleX), iLength);
+			iLength := ( Length(tstrlistSCLP[iCounter + 4]) - Length(strFindBoneScaleZ) ); // Z
+			strScaleZ := Copy(tstrlistSCLP[iCounter + 4], Length(strFindBoneScaleZ), iLength);
 			
-			arrayBones[iNumBones - 1].strBoneName := strName;
-			arrayBones[iNumBones - 1].fScaleX := StrToFloat(strScaleX) - 1.0; //ARMA bone data is normalized at 0.0, SCLP bone data @ 1.0
-			arrayBones[iNumBones - 1].fScaleY := StrToFloat(strScaleY) - 1.0;
-			arrayBones[iNumBones - 1].fScale| := StrToFloat(strScaleZ) - 1.0;
+			tstrlistBones.Add(strName);
+			tstrlistBones.Add(FloatToStr(StrToFloat(strScaleX) - 1.0)); //ARMA bone data is normalized at 0.0, SCLP bone data @ 1.0
+			tstrlistBones.Add(FloatToStr(StrToFloat(strScaleY) - 1.0));
+			tstrlistBones.Add(FloatToStr(StrToFloat(strScaleZ) - 1.0));
+			
+			inc(iNumBones);
+			iCounter := iCounter - 7;
 			
 		end;
 		
+		dec(iCounter);
+		
 	end;
 	
-	Result := arrayBones;
+	//ShowMessage('Number of bones: ' + IntToStr(iNumBones));
+	
+	tstrlistDest := tstrlistBones;
 	
 end;
 
 procedure AddBoneData(e: IInterface;
 											var strSCLPFullFilePathF, strSCLPFullFilePathM: string);
 var
-	tstrlistSCLPM, tstrlistSCLPF: TStringList;
-	arrayBonesM, arrayBonesF: arrayRecBone;
+	tstrlistSCLPM, tstrlistSCLPF, tstrlistBonesM, tstrlistBonesF: TStringList;
 	eBoneDataM, eBoneDataF, eAddedBone: IInterface;
-	iCounter: integer;
+	iCounter, iRealCounter, iNumBonesM, iNumBonesF: integer;
 begin
 	
 	tstrlistSCLPM := TStringList.Create;
 	tstrlistSCLPF := TStringList.Create;
+	tstrlistBonesM := TStringList.Create;
+	tstrlistBonesF := TStringList.Create;
+	
 	
 	tstrlistSCLPM.LoadFromFile(strSCLPFullFilePathM);
 	tstrlistSCLPF.LoadFromFile(strSCLPFullFilePathF);
 	
-	arrayBonesM := GetDataFromSCLP(tstrlistSCLPM);
-	arrayBonesF := GetDataFromSCLP(tstrlistSCLPF);
+	tstrlistBonesM := GetDataFromSCLP(tstrlistSCLPM, iNumBonesM, tstrlistBonesM);
+	tstrlistBonesF := GetDataFromSCLP(tstrlistSCLPF, iNumBonesF, tstrlistBonesF);
 	
 	eBoneDataM := Add(e, 'Bone Data', false);
+	ShowMessage('Bone Data Path: '+FullPath(eBoneDataM));
+	eBoneDataM := ElementByIndex(eBoneDataM, 0);
+	ShowMessage('Data Path: '+FullPath(eBoneDataM));
+	Add(eBoneDataM, 'Bones', false);
 	eBoneDataM := ElementByPath(eBoneDataM, 'Bones');
+	ShowMessage('Bones Path: '+FullPath(eBoneDataM));
 	
-	eBoneDataF := Add(e, 'Bone Data', false);
+	eBoneDataF := ElementAssign(ElementByPath(e, 'Bone Data'), HighInteger, nil, false);
 	SetElementEditValues(eBoneDataF, 'BSMP - Gender', 'Female');
 	eBoneDataF := ElementByPath(eBoneDataF, 'Bones');
 	
-	for iCounter := 0 to Length(arrayBonesM) - 1 do begin
+	
+	iCounter := iNumBonesM - 1;
+	iRealCounter := 0;
+	while iCounter >= 0 do begin;
+	
 		eAddedBone := ElementAssign(eBoneDataM, HighInteger, nil, false);
-		SetElementEditValues(eAddedBone, 'BSMS - Name', arrayBonesM[iCounter].strBoneName);
-		SetElementEditValues(eAddedBone, 'BSMB - Values\Value #0', arrayBonesM[iCounter].fScaleX);
-		SetElementEditValues(eAddedBone, 'BSMB - Values\Value #1', arrayBonesM[iCounter].fScaleY);
-		SetElementEditValues(eAddedBone, 'BSMB - Values\Value #2', arrayBonesM[iCounter].fScaleZ);
+		ShowMessage(FullPath(eAddedBone));
+		
+		//ShowMessage('Adding Male bone: ' + tstrlistBonesM[iRealCounter]);
+		SetElementEditValues(eAddedBone, 'BSMB - Name', tstrlistBonesM[iRealCounter]);
+		
+		//ShowMessage('Scale X: ' + tstrlistBonesM[iRealCounter + 1]);
+		SetElementEditValues(eAddedBone, 'BSMS - Values\Value #0', tstrlistBonesM[iRealCounter + 1]);
+		
+		//ShowMessage('Scale Y: ' + tstrlistBonesM[iRealCounter + 2]);
+		SetElementEditValues(eAddedBone, 'BSMS - Values\Value #1', tstrlistBonesM[iRealCounter + 2]);
+		
+		//ShowMessage('Scale Z: ' + tstrlistBonesM[iRealCounter + 3]);
+		SetElementEditValues(eAddedBone, 'BSMS - Values\Value #2', tstrlistBonesM[iRealCounter + 3]);
+		
+		iRealCounter := iRealCounter + 4;
+		Dec(iCounter);
+		
 	end;
 	
-	for iCounter := 0 to Length(arrayBonesF) - 1 do begin
+	
+	iCounter := iNumBonesF - 1;
+	iRealCounter := 0;
+	while iCounter >= 0 do begin;
+	
 		eAddedBone := ElementAssign(eBoneDataF, HighInteger, nil, false);
-		SetElementEditValues(eAddedBone, 'BSMS - Name', arrayBonesF[iCounter].strBoneName);
-		SetElementEditValues(eAddedBone, 'BSMB - Values\Value #0', arrayBonesF[iCounter].fScaleX);
-		SetElementEditValues(eAddedBone, 'BSMB - Values\Value #1', arrayBonesF[iCounter].fScaleY);
-		SetElementEditValues(eAddedBone, 'BSMB - Values\Value #2', arrayBonesF[iCounter].fScaleZ);
+		
+		//ShowMessage('Adding Female bone: 'tstrlistBonesF[iRealCounter]);
+		SetElementEditValues(eAddedBone, 'BSMB - Name', tstrlistBonesF[iRealCounter]);
+		
+		//ShowMessage('Scale X: ' + tstrlistBonesF[iRealCounter + 1]);
+		SetElementEditValues(eAddedBone, 'BSMS - Values\Value #0', tstrlistBonesF[iRealCounter + 1]);
+		
+		//ShowMessage('Scale Y: ' + tstrlistBonesF[iRealCounter + 2]);
+		SetElementEditValues(eAddedBone, 'BSMS - Values\Value #1', tstrlistBonesF[iRealCounter + 2]);
+		
+		//ShowMessage('Scale Z: ' + tstrlistBonesF[iRealCounter + 3]);
+		SetElementEditValues(eAddedBone, 'BSMS - Values\Value #2', tstrlistBonesF[iRealCounter + 3]);
+		
+		iRealCounter := iRealCounter + 4;
+		Dec(iCounter);
+		
 	end;
 	
 	
@@ -149,7 +190,7 @@ end;
 function Process(e: IInterface): integer;
 var
 	strOutfitPathM, strOutfitNameM, strOutfitPathF, strOutfitNameF,
-	strOutfitDir, strSCLPFileM, strSCLPFileF: string;
+	strSCLPFileM, strSCLPFileF: string;
 begin
 
 	if Signature(e) <> 'ARMA' then
@@ -162,13 +203,17 @@ begin
 	
 	
 	//Get the outfit mesh names, and the outfit folders
-	GetFileNamesAndPaths(e, false, strOutfitPathM, strOutfitNameM);
-	GetFileNamesAndPaths(e, false, strOutfitPathF, strOutfitNameF);
+	GetOutfitFileNamesAndPaths(e, false, strOutfitPathM, strOutfitNameM);
+	GetOutfitFileNamesAndPaths(e, false, strOutfitPathF, strOutfitNameF);
 	//End
 	
 	//Get the .sclp files
 	strSCLPFileM := strOutfitPathM + strOutfitNameM + 'sclp';
 	strSCLPFileF := strOutfitPathF + strOutfitNameF + 'sclp';
+	//End
+	
+	//Add bone data from .sclp files
+	AddBoneData(e, strSCLPFileM, strSCLPFileF);
 	//End
 	
 end;
