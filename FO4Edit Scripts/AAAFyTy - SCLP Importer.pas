@@ -71,16 +71,21 @@ begin
 		if Pos(strFindBoneName, tstrlistSCLP[iCounter]) = 1 then begin
 			
 			iLength := ( (Length(tstrlistSCLP[iCounter]) + 2) - Length(strFindBoneName) ) - 2; //So we don't get '",'
-			strName := Copy(tstrlistSCLP[iCounter], Length(strFindBoneName), iLength);
+			strName := Copy(tstrlistSCLP[iCounter], Length(strFindBoneName) + 1, iLength - 2);
+			ShowMessage(strName);
 			
 			iLength := ( Length(tstrlistSCLP[iCounter + 2]) - Length(strFindBoneScaleX) ) - 1; // X
+			ShowMessage(tstrlistSCLP[iCounter + 2]);
 			strScaleX := Copy(tstrlistSCLP[iCounter + 2], Length(strFindBoneScaleX), iLength);
+			
 			
 			iLength := ( Length(tstrlistSCLP[iCounter + 3]) - Length(strFindBoneScaleY) ) - 1; // Y
 			strScaleY := Copy(tstrlistSCLP[iCounter + 3], Length(strFindBoneScaleY), iLength);
+			//ShowMessage(strScaleY);
 			
 			iLength := ( Length(tstrlistSCLP[iCounter + 4]) - Length(strFindBoneScaleZ) ); // Z
 			strScaleZ := Copy(tstrlistSCLP[iCounter + 4], Length(strFindBoneScaleZ), iLength);
+			//ShowMessage(strScaleZ);
 			
 			tstrlistBones.Add(strName);
 			tstrlistBones.Add(FloatToStr(StrToFloat(strScaleX) - 1.0)); //ARMA bone data is normalized at 0.0, SCLP bone data @ 1.0
@@ -108,6 +113,7 @@ var
 	tstrlistSCLPM, tstrlistSCLPF, tstrlistBonesM, tstrlistBonesF: TStringList;
 	eBoneDataM, eBoneDataF, eAddedBone: IInterface;
 	iCounter, iRealCounter, iNumBonesM, iNumBonesF: integer;
+	bSkip, bFilledFirstBone: boolean;
 begin
 	
 	tstrlistSCLPM := TStringList.Create;
@@ -123,48 +129,83 @@ begin
 	tstrlistBonesF := GetDataFromSCLP(tstrlistSCLPF, iNumBonesF, tstrlistBonesF);
 	
 	eBoneDataM := Add(e, 'Bone Data', false);
-	ShowMessage('Bone Data Path: '+FullPath(eBoneDataM));
+	//ShowMessage('Bone Data Path: '+FullPath(eBoneDataM));
 	eBoneDataM := ElementByIndex(eBoneDataM, 0);
-	ShowMessage('Data Path: '+FullPath(eBoneDataM));
-	Add(eBoneDataM, 'Bones', false);
-	eBoneDataM := ElementByPath(eBoneDataM, 'Bones');
-	ShowMessage('Bones Path: '+FullPath(eBoneDataM));
+	//ShowMessage('Data Path: '+FullPath(eBoneDataM));
+	eBoneDataM := ElementAssign(eBoneDataM, 1, nil, false);
+	//ShowMessage('Bones Path: '+FullPath(eBoneDataM));
 	
 	eBoneDataF := ElementAssign(ElementByPath(e, 'Bone Data'), HighInteger, nil, false);
 	SetElementEditValues(eBoneDataF, 'BSMP - Gender', 'Female');
-	eBoneDataF := ElementByPath(eBoneDataF, 'Bones');
+	eBoneDataF := ElementAssign(eBoneDataF, 1, nil, false);
 	
 	
 	iCounter := iNumBonesM - 1;
 	iRealCounter := 0;
-	while iCounter >= 0 do begin;
-	
-		eAddedBone := ElementAssign(eBoneDataM, HighInteger, nil, false);
-		ShowMessage(FullPath(eAddedBone));
+	while iCounter >= 0 do begin
 		
-		//ShowMessage('Adding Male bone: ' + tstrlistBonesM[iRealCounter]);
-		SetElementEditValues(eAddedBone, 'BSMB - Name', tstrlistBonesM[iRealCounter]);
+		if tstrlistBonesM[iRealCounter + 1] = '0.0000' then
+			if tstrlistBonesM[iRealCounter + 2] = '0.0000' then
+				if tstrlistBonesM[iRealCounter + 3] = '0.0000' then
+					bSkip := true;
 		
-		//ShowMessage('Scale X: ' + tstrlistBonesM[iRealCounter + 1]);
-		SetElementEditValues(eAddedBone, 'BSMS - Values\Value #0', tstrlistBonesM[iRealCounter + 1]);
+		if not bSkip then begin
 		
-		//ShowMessage('Scale Y: ' + tstrlistBonesM[iRealCounter + 2]);
-		SetElementEditValues(eAddedBone, 'BSMS - Values\Value #1', tstrlistBonesM[iRealCounter + 2]);
+			if bFilledFirstBone = false then
+				eAddedBone := ElementByIndex(eBoneDataM, 0)
+			else
+				eAddedBone := ElementAssign(eBoneDataM, HighInteger, nil, false);
+			
+			bFilledFirstBone := true;
+			
+			ShowMessage('Added Bone Path: ' + FullPath(eAddedBone));
+			
+			ElementAssign(eAddedBone, 1, nil, false); // Add BSMS element
+			ShowMessage('Path: ' + FullPath(eAddedBone));
+			ElementAssign(ElementByPath(eAddedBone, 'BSMS - Values'), HighInteger, nil, false); // Add X
+			ElementAssign(ElementByPath(eAddedBone, 'BSMS - Values'), HighInteger, nil, false); // Add Y
+			ElementAssign(ElementByPath(eAddedBone, 'BSMS - Values'), HighInteger, nil, false); // Add Z
+			
+			//ShowMessage('Adding Male bone: ' + tstrlistBonesM[iRealCounter]);
+			SetElementEditValues(eAddedBone, 'BSMB - Name', tstrlistBonesM[iRealCounter]);
+			
+			//ShowMessage('Scale X: ' + tstrlistBonesM[iRealCounter + 1]);
+			SetElementEditValues(eAddedBone, 'BSMS - Values\Value #0', tstrlistBonesM[iRealCounter + 1]);
+			
+			//ShowMessage('Scale Y: ' + tstrlistBonesM[iRealCounter + 2]);
+			SetElementEditValues(eAddedBone, 'BSMS - Values\Value #1', tstrlistBonesM[iRealCounter + 2]);
+			
+			//ShowMessage('Scale Z: ' + tstrlistBonesM[iRealCounter + 3]);
+			SetElementEditValues(eAddedBone, 'BSMS - Values\Value #2', tstrlistBonesM[iRealCounter + 3]);
+			
+		end;
 		
-		//ShowMessage('Scale Z: ' + tstrlistBonesM[iRealCounter + 3]);
-		SetElementEditValues(eAddedBone, 'BSMS - Values\Value #2', tstrlistBonesM[iRealCounter + 3]);
 		
 		iRealCounter := iRealCounter + 4;
 		Dec(iCounter);
 		
 	end;
 	
+	bFilledFirstBone := false;
 	
+	
+	{
 	iCounter := iNumBonesF - 1;
 	iRealCounter := 0;
-	while iCounter >= 0 do begin;
+	while iCounter >= 0 do begin
 	
-		eAddedBone := ElementAssign(eBoneDataF, HighInteger, nil, false);
+		if bFilledFirstBone = false then
+			eAddedBone := ElementByIndex(eBoneDataF, 0)
+		else
+			eAddedBone := ElementAssign(eBoneDataF, HighInteger, nil, false);
+		
+		bFilledFirstBone := true;
+		
+		ShowMessage(FullPath(eAddedBone));
+		
+		ElementAssign(eAddedBone, 1, nil, false); // Add X
+		ElementAssign(eAddedBone, 2, nil, false); // Add Y
+		ElementAssign(eAddedBone, 3, nil, false); // Add Z
 		
 		//ShowMessage('Adding Female bone: 'tstrlistBonesF[iRealCounter]);
 		SetElementEditValues(eAddedBone, 'BSMB - Name', tstrlistBonesF[iRealCounter]);
@@ -182,7 +223,7 @@ begin
 		Dec(iCounter);
 		
 	end;
-	
+	}
 	
 end;
 
@@ -204,7 +245,7 @@ begin
 	
 	//Get the outfit mesh names, and the outfit folders
 	GetOutfitFileNamesAndPaths(e, false, strOutfitPathM, strOutfitNameM);
-	GetOutfitFileNamesAndPaths(e, false, strOutfitPathF, strOutfitNameF);
+	GetOutfitFileNamesAndPaths(e, true, strOutfitPathF, strOutfitNameF);
 	//End
 	
 	//Get the .sclp files
