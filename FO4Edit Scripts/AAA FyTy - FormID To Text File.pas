@@ -1,32 +1,45 @@
 unit userscript;
 var
-	tstrlistNPCFormIDs: TStringList;
-	strTextFileName: string;
+	tstrlistText: TStringList;
+	strFilePath: string;
 
 function Initialize: integer;
 begin
-	tstrlistNPCFormIDs := TStringList.Create;
-	strTextFileName := 'Hot Mama Leveled Lists.txt';
+  tstrlistText := TStringList.Create;
+	strFilePath := ScriptsPath + 'FyTy\MeleeGunsUnarmedNPCWeaponFormIDs.txt';
 end;
 
 
 function Process(e: IInterface): integer;
 var
-	strFullFormID: string;
+	strFormID, strDamage: string;
+	iDamage: integer;
 begin
-
+	
   AddMessage('Processing: ' + FullPath(e));
 	
-	strFullFormID := GetEditValue(ElementByPath(e, 'Record Header\FormID'));
-	tstrlistNPCFormIDs.Add(strFullFormID);
+	strFormID := FixedFormID(e);
+	
+	strDamage := GetElementEditValues(e, 'DNAM - Data\Damage - Base');
+	
+	if strDamage = '' then
+		exit;
+	
+	AddMessage(strDamage);
+	
+	iDamage := Round(StrToFloat(strDamage));
+	
+	if iDamage > 0 then
+		tstrlistText.Add(strFormID);
+
 
 end;
 
 
 function Finalize: integer;
 begin
-	tstrlistNPCFormIDs.SaveToFile(ProgramPath + 'Edit Scripts\FyTy\' + strTextFileName);
-	tstrlistNPCFormIDs.Free;
+  tstrlistText.SaveToFile(strFilePath);
+	tstrlistText.Free();
 end;
 
 end.
