@@ -6,7 +6,7 @@ var
 function Initialize: integer;
 begin
 	
-	fileDestination := FileByIndex(9);
+	//fileDestination := FileByIndex(9);
 	bEditFlags := false;
 	
 end;
@@ -23,11 +23,11 @@ begin
 	
   AddMessage('Processing: ' + FullPath(e));
 	
-	eCopiedZone := wbCopyElementToFile(e, fileDestination, false, true);
-	eFlags := ElementByPath(eCopiedZone, 'DATA - \Flags');
+	//eCopiedZone := wbCopyElementToFile(e, fileDestination, false, true);
+	eFlags := ElementByPath(e, 'DATA - DATA\Flags');
 	
-	SetElementEditValues(eCopiedZone, 'DATA - \Min Level', '50');
-	SetElementEditValues(eCopiedZone, 'DATA - \Max Level', '51');
+	SetElementEditValues(e, 'DATA - DATA\Min Level', '50');
+	SetElementEditValues(e, 'DATA - DATA\Max Level', '51');
 	
 	if GetElementEditValues(eFlags, 'Match PC Below Minimum level') = '1' then
 		SetElementEditValues(eFlags, 'Match PC Below Minimum level', '0');

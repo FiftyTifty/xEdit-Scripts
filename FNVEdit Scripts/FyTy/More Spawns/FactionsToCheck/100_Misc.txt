@@ -1,0 +1,3 @@
+CreatureFaction
+Vault108GaryFaction
+Vault106LunaticFaction

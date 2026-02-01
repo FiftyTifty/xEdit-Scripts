@@ -1,0 +1,5 @@
+36EF3650 - Smooth
+36EF3651 - Textured
+36EF3652 - Serious
+36EF3653 - Lined
+36EF3654 - Wrinkled

@@ -1,0 +1,6 @@
+LvlNCRCFPowderGangerGun [NPC_:001543F4]
+LvlNCRCFPowderGangerMelee [NPC_:001543F5]
+LvlPowderGanger3GunVar [NPC_:00101C90]
+LvlPowderGangerGunVar [NPC_:0008D385]
+LvlPowderGangerMeleeVar [NPC_:0008D373]
+VSpawnSpecialGangerGS01 [NPC_:001689C3]

@@ -1,0 +1,29 @@
+DLC04HairFemale38_Hairline1 "DLC04HairFemale38_Hairline1" [HDPT:0601A27E]
+DLC04HairFemale38_Hairline2 "DLC04HairFemale38_Hairline2" [HDPT:0601A27F]
+DLC04HairFemale39_Hairline "DLC04HairFemale39_Hairline" [HDPT:0601A282]
+Hairline - Poodle Skirt.txt
+HairLong01_hairline "HairLong01_hairline" [HDPT:000469BC]
+HairFemale02_hairline "HairFemale02_hairline" [HDPT:000969C8]
+HairFemale03_Hairline "HairFemale03_Hairline" [HDPT:00186AEE]
+HairFemale04_hairline "HairFemale04_hairline" [HDPT:0016CA33]
+HairFemale05_Hairline "HairFemale05_Hairline" [HDPT:00186FC0]
+HairFemale06_Hairline "HairFemale06_Hairline" [HDPT:00186FC1]
+HairFemale07_Hairline "HairFemale07_Hairline" [HDPT:001C2076]
+nil
+HairFemale09_hairline "HairFemale09_hairline" [HDPT:0016CA34]
+HairFemale10_Hairline "HairFemale10_Hairline" [HDPT:00144A9A]
+HairFemale11_Hairline "HairFemale11_Hairline" [HDPT:00144A9C]
+HairFemale12_Hairline "HairFemale12_Hairline" [HDPT:00144A9E]
+nil
+HairFemale14_Hairline "HairFemale14_Hairline" [HDPT:001BDDEC]
+nil
+nil
+HairFemale18_Hairline "HairFemale18_Hairline" [HDPT:0009C298]
+HairFemale21_Hairline "HairFemale21_Hairline" [HDPT:001C2077]
+HairFemale22_Hairline "HairFemale22_Hairline" [HDPT:001C26B6]
+HairFemale23_Hairline "HairFemale23_Hairline" [HDPT:001C4092]
+HairFemale24_Hairline "HairFemale24_Hairline" [HDPT:001C9A71]
+Hairline - Waste Maiden.txt
+Hairline - Unlady Like.txt
+HairFemale32_Hairline1 "HairFemale32_Hairline1" [HDPT:001E678D]
+Hairline - Anchorage.txt

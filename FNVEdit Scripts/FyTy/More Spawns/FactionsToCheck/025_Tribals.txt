@@ -1,0 +1,10 @@
+NVDLC02TribalsFaction
+NVDLC02WhiteLegsFaction
+NVDLC02DeadHorseFaction
+NVDLC02SorrowsFaction
+NVDLC02WhiteLegsAggressiveFaction
+NVDLC02PainMakersFaction
+NVDLC02BoneBreakersFaction
+DLC04TribalHostileFaction
+DLC04TribalFriendlyFaction
+DLC04TribalGenericFaction

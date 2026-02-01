@@ -1,0 +1,6 @@
+ChevyChaseBoSGNNBattle "Brotherhood of Steel Paladin" [NPC_:0609BE84]
+CitadelBrotherhoodKnightGeneric "Brotherhood of Steel Knight" [NPC_:060BA400]
+HVPaladinGuard "Brotherhood of Steel Paladin" [NPC_:000ACD6D]
+LvlBrotherhoodOfSteelGunDC [NPC_:06000A84]
+LvlBrotherhoodOfSteelSpecialDC [NPC_:06000A86]
+MallLvlBrotherhoodOfSteelGunPatrolWeapDrawn [NPC_:0605C9CD]

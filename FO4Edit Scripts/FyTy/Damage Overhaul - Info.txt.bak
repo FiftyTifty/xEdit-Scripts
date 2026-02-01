@@ -1,0 +1,107 @@
+Leather Tor - 6AR, 12DTe, 4DTr
+		Studded +10, +10DTe
+	Light +13AR
+	Medium +17AR, +13DTe
+	Heavy +21AR, +26DTe
+	
+Leather Arm - 3AR, 6DTe, 2DTr
+		Studded +3, +6DTe
+	Light +5AR
+	Medium +8AR, +8DTe
+	Heavy +11AR, +15DTe
+
+Metal Torso - 12AR, 2DTe, 8DTr
+		Polished +15AR, +8DTe
+	Light +19AR
+	Medium +22AR, +10DTe
+	Heavy +25AR, +20DTe
+
+Metal Arm   - 6AR, 1DTe, 4DTr
+		Polished +11AR, +6DTe
+	Light +9AR
+	Medium +12AR, +5DTe
+	Heavy +15AR, +10DTe
+	
+
+Raider Tors - 10AR, 6DTe, 8DTr
+		Buttressed +15AR, +7DTe
+	Light +14AR
+	Medium +17AR, +9DTe
+	Heavy +20AR, +18DTe
+	
+Raider Arm  - 5AR, 3DTe, 4DTr
+		Buttressed +5AR, +4DTe
+	Light +4AR
+	Medium +7AR, +5DTe
+	Heavy +10AR, +10DTe
+
+Synth Torso - 12AR, 16DTe, 8DTr
+		Nano +8AR, +8DTe
+	Light +12AR
+	Medium +16AR, 16+DTe
+	Heavy +20AR, 32+DTe
+	
+Synth Arm   - 7AR, 8DTe, 4DTr
+		Nano +4AR, +4DTe
+	Light +6AR
+	Medium +8AR, 8+DTe
+	Heavy +10AR, 12+DTe
+
+Combat Tors - 12AR, 6DTe, 3DTr
+		Polymer 12+AR, 7+DTe
+	Light 12+AR
+	Medium 16+AR, 10+DTe
+	Heavy 20+AR, 20+DTe
+
+Combat Arm  - 6AR, 3DTe, 1DTr
+		Polymer 4+AR, 3+DTe
+	Light 4+AR
+	Medium 6+AR, 4+DTe
+	Heavy 8+AR, 8+DTe
+
+Mining Helm - 3AR
+
+Vault Jumps - 0AR, 0DTe, 5DTr
+Cage Armour - 85AR, 27DTe, 
+BoS Field Scribe - 20AR, 36DTe, 12DTr, Leather Torso, LLeg, RLeg, LArm, RArm
+BoS Knight Lancer - Leather Torso, Larm, RArm, LLeg, RLeg
+Silver Shroud - Leather Torso, Larm, Rarm, LLeg, RLeg
+	39 31 8
+Cage Underarmour - Metal Torso, Larm, RArm, LLeg, RLeg
+	80 35 24
+Trapper Suit Coastal - Metal Torso Larm, RArm, LLeg, RLeg
+	96 50 24
+Railroad Armor 05 - Metal/leather torso, Larm, Rarm, LLeg, RLeg
+	60 19 17
+Quinlan's Armor - Metal/leather Torso, Larm, Rarm, LLeg, RLeg
+	
+
+Metal_tor - +12ar +2er + 8rr
+Metal_0 - +3ar +0er
+Metal_1 - +6ar +2er
+Metal_2 - +9ar +4er
+Metal_3 - +12ar +6er
+Metal_4 - +15ar +8er
+Metal_L - +19ar +0er
+Metal_M - +22AR + 10er
+Metal_H - +25AR + 20er
+
+Raider_tor - +12ar +2er + 8rr
+Raider_0 - +3ar +0er
+Raider_1 - +6ar +2er
+Raider_2 - +9ar +4er
+Raider_3 - +12ar +5er
+Raider_4 - +15ar +7er
+Raider_L - +14ar +0er
+Raider_M - +17AR +9er
+Raider_H - +20AR +18er
+
+Leather_tor - 6AR, 12DTe, 4DTr
+Leather_0 - +2ar +0er
+Leather_1 - +4ar +2er
+Leather_2 - +6ar +5er
+Leather_3 - +8ar +7er
+Leather_4 - +10ar +10er
+Leather_L - +13ar +0er
+Leather_M - +17ar +13er
+Leather_H - +21ar +26er

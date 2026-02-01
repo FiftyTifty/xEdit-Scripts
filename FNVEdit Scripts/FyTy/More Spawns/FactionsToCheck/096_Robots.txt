@@ -1,0 +1,13 @@
+RobotFaction
+NVDLC03RobotFaction
+NVDLC03RoboScorpionFaction
+DLC02RobotFaction
+DLC04BrainRobotFaction
+NVDLC03RoboScorpionGiantFaction
+DLC03EnclaveBaseRobotFaction
+REPCONHQRobotFaction
+NVDLC03X13RoboScorpFaction
+MetroRobotFaction
+VHDSecuritronFaction
+vSecuritronDialogueFaction
+EyebotFaction

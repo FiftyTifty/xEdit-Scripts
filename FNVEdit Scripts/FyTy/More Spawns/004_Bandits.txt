@@ -1,0 +1,3 @@
+DLC04LvlBanditMelee [NPC_:0A00C1DD]
+DLC04LvlBanditRandomBWAmbush [NPC_:0A011265]
+DLC04LvlBanditRanged [NPC_:0A00C1DC]

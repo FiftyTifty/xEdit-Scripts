@@ -1,0 +1,6 @@
+DLC04SwampfolkFaction
+DLC04SwampFolkCreeperFaction
+DLC04SwampFolkScrapperFaction
+DLC04SwampFolkBrawlerFaction
+DLC04SwampFolkBruiserFaction
+DLC04SwampFolkTrackerFaction

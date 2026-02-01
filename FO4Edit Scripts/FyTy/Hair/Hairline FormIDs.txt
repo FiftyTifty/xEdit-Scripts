@@ -1,5 +1,3 @@
-DLC03_HairFemale36_Hairline "DLC03_HairFemale36_Hairline" [HDPT:0302F303]
-DLC03_HairFemale37_Hairline "DLC03_HairFemale37_Hairline" [HDPT:0302F304]
 DLC04HairFemale38_Hairline1 "DLC04HairFemale38_Hairline1" [HDPT:0601A27E]
 DLC04HairFemale38_Hairline2 "DLC04HairFemale38_Hairline2" [HDPT:0601A27F]
 DLC04HairFemale39_Hairline "DLC04HairFemale39_Hairline" [HDPT:0601A282]
@@ -28,14 +26,12 @@ HairFemale21_Hairline "HairFemale21_Hairline" [HDPT:001C2077]
 HairFemale22_Hairline "HairFemale22_Hairline" [HDPT:001C26B6]
 HairFemale23_Hairline "HairFemale23_Hairline" [HDPT:001C4092]
 HairFemale24_Hairline "HairFemale24_Hairline" [HDPT:001C9A71]
-Hairline - Short Crop.txt
-Hairline - Stunning Intellect.txt
-Hairline - The Merc.txt
-Hairline - Natural Beauty.txt
-Hairline - Rude Ridge.txt
-Hairline - Waste Maiden.txt
-Hairline - Unlady Like.txt
+\FyTy\Hair\Hairline - Short Crop.txt
+\FyTy\Hair\Hairline - Stunning Intellect.txt
+\FyTy\Hair\Hairline - The Merc.txt
+\FyTy\Hair\Hairline - Natural Beauty.txt
+\FyTy\Hair\Hairline - Rude Ridge.txt
+\FyTy\Hair\Hairline - Waste Maiden.txt
+\FyTy\Hair\Hairline - Unlady Like.txt
 HairFemale32_Hairline1 "HairFemale32_Hairline1" [HDPT:001E678D]
-HairFemale33_Hairline "HairFemale3_Hairline" [HDPT:00215149]
-HairFemale34_Hairline "HairFemale34_Hairline" [HDPT:0021514D]
-Hairline - Anchorage.txt
+\FyTy\Hair\Hairline - Anchorage.txt

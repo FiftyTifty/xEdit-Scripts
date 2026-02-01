@@ -1,0 +1,8 @@
+DLC03RoboBrainRace "RoboBrain" [RACE:03033E79]
+DLC01RoboBrainRace "Robobrain" [RACE:01001129]
+DLC01HandyCreateABotRace "MrHandy" [RACE:010027B9]
+AssaultronRace "Assaultron" [RACE:000D8417]
+EyeBotRace "EyeBot" [RACE:000A563A]
+HandyRace "MrHandy" [RACE:000359F4]
+ProtectronRace "Protectron" [RACE:000DFB33]
+SentryBotRace "SentryBot" [RACE:000AE0B7]

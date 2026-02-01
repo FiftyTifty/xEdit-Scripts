@@ -1,0 +1,2 @@
+BMNightkinRoadAmbusher "Nightkin" [CREA:000E9492]
+JacobstownNightkin "Nightkin" [CREA:0013AFDC]

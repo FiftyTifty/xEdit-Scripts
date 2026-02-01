@@ -1,6 +1,7 @@
 unit userscript;
 var
-	tstrlistHairFormIDs, tstrlistHairlineFormIDs: TStringList;
+	tstrlistHairFormIDs, tstrlistHairlineFormIDs,
+	tstrlistHairToFind: TStringList;
 	strWorkingPath: string;
 
 function Initialize: integer;
@@ -9,10 +10,14 @@ begin
 	tstrlistHairFormIDs := TStringList.Create;
 	tstrlistHairlineFormIDs := TStringList.Create;
 	
-	strWorkingPath := ProgramPath + 'Edit Scripts\FyTy\Hair\';
+	strWorkingPath := ProgramPath + 'Edit Scripts\FyTy\Hair - Final\';
 	
 	tstrlistHairFormIDs.LoadFromFile(strWorkingPath + 'Hair FormIDs.txt');
 	tstrlistHairlineFormIDs.LoadFromFile(strWorkingPath + 'Hairline FormIDs.txt');
+	
+	tstrlistHairToFind := TStringList.Create;
+	tstrlistHairToFind.Add('HairFemale');
+	tstrlistHairToFind.Add('_hairline');
 	
 end;
 
@@ -65,15 +70,17 @@ procedure RemoveHairStuff(eHeadParts: IInterface);
 var
 	eCurrentHairPart: IInterface;
 	iCounter, iDummy: integer;
+	strHairPart: string;
 begin
 	
 	for iCounter := Pred(ElementCount(eHeadParts)) downto 0 do begin
 	
 		eCurrentHairPart := ElementByIndex(eHeadParts, iCounter);
+		strHairPart := GetEditValue(eCurrentHairPart);
 		
-		if tstrlistHairFormIDs.Find(GetEditValue(eCurrentHairPart), iDummy) then
+		if (Pos(tstrlistHairToFind[0], strHairPart) > 0) then
 			Remove(eCurrentHairPart)
-		else if tstrlistHairlineFormIDs.Find(GetEditValue(eCurrentHairPart), iDummy) then
+		else if (Pos(tstrlistHairToFind[1], strHairPart) > 0) then
 			Remove(eCurrentHairPart);
 			
 	end;

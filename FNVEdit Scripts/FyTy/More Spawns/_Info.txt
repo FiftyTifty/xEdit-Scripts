@@ -1,0 +1,198 @@
+==Factions==
+=Raiders=
+	RaiderFaction
+	DLC01CombatRaiders
+	DLC01PittRaiderFaction
+	DLC01RadioTowerRaiderFaction
+	DLC01RaiderAmbushFaction
+=Bandits=
+	DLC04BanditFaction
+	DLC03WQ01BanditFaction
+=Vipers=
+	VWastelandNVBanditViperFaction
+=Jackals=
+	VJackalsGangFaction
+=Slavers=
+	DLC01DCSlaverFaction
+	ParadiseFallsSlaverFaction
+	SlaverFaction
+	SlaverMemorialFaction
+=Legion=
+	VCaesarsLegionFaction
+	ArmorVCeasarsLegionFaction
+	VCeasarsLegionSnifferFaction
+	CaesarsLegionNelsonFaction
+	vCaesarsLegionTheFortFaction
+	VCaesarsLegionCCoveFaction
+	VHooverDamCaesarsLegionfaction
+	VCaesarslegionCCoveExplorerFaction
+	VCaesarsLegionHELIOSFaction
+=NCR=
+	NCRFactionNV
+	ArmorNCRFactionNV
+	NCRObsolete
+	VNCRSnifferFaction
+	VNCRStreetFaction
+	VNCRHeliosFaction
+	VNCRForlornHopeFaction
+	VNCRMcCarranPatrollerFaction
+	VNCRNelsonFaction
+	BoulderCityNCRFaction
+=Fiends=
+	FiendsFactionNv
+=Insects=
+	RadRoachFaction
+	RadScorpionfaction
+	NVDLC02CrRadscorpionFaction
+	VCrGiantRadscorpionFaction
+	NVDLC02CrGiantRadscorpionfaction
+	BloatflyFaction
+	NVDLC02CrBloatflyFaction
+	AntFaction
+	MantisFaction
+	VCrFireAntFaction
+	BlackAntFaction
+	NVDLC02CrMantisFaction
+	NVDLC02CrAntFaction
+	VCrCazadorFaction
+	NVDLC02CrCazadorFaction
+=Animals=
+	Brahminfaction
+	MoleRatFaction
+	VCrGiantRatFaction
+	NVDLC02CrMoleRatFaction
+	nvdlc02CrGiantRatFaction
+	RatFaction
+	VCrFireGeckofaction
+	GeckoFaction
+	NVDLC02CrGreenGeckoFaction
+	vcrGoldenGeckoFaction
+	NVDLC02CrGeckoFaction
+	YaoGuaiFaction
+	NVDLC02CrYaoGuaiFaction
+	VCrBigHornerFaction
+	NVDLC02CrBigHornerFaction
+	DogFaction
+	NVDLC01DogFaction
+	NVDLC03CyberDogFaction
+	NVDLC02CrDogFaction
+	NVDLC02CrWhiteLegMongrel
+=Robots=
+	RobotFaction
+	NVDLC03RobotFaction
+	NVDLC03RoboScorpionFaction
+	DLC02RobotFaction
+	DLC04BrainRobotFaction
+	NVDLC03RoboScorpionGiantFaction
+	DLC03EnclaveBaseRobotFaction
+	REPCONHQRobotFaction
+	NVDLC03X13RoboScorpFaction
+	MetroRobotFaction
+	VHDSecuritronFaction
+	vSecuritronDialogueFaction
+	EyebotFaction
+=Feral Ghouls=
+	FeralGhoulFaction
+=Super Mutants=
+	SuperMutantFaction
+	MS18SuperMutantFaction
+	BlackMountainSuperMutantFaction
+	SuperMutantFirstGenFaction
+=Nightkin=
+	NightkinFaction
+	BlackMountainNightkinFaction
+	JacobstownNightkinFaction
+	REPCONNightkinFaction
+=Aliens=
+	DLC05AlienFaction
+	WWAlienFaction
+	DLC05AlienNonHostileFaction
+=Alien Robots=
+	DLC05RobotFaction
+=Abomination=
+	DLC05AbominationFaction
+	DLC05ExLabAbom
+=Pitt Raiders=
+	DLC01PittRaiderFaction
+=Enclave=
+	EnclaveFaction
+=BoS=
+	BrotherhoodSteelFactionDC
+	BrotherhoodSteelGenericFaction
+	BrotherhoodSteelFaction
+	ArmorBrotherhoodSteelFaction
+	BrotherhoodSteelKnightFaction
+	BrotherhoodSteelScribeFaction
+	BrotherhoodSteelInitiateFaction
+	BrotherhoodJourneymanScribeFaction
+	BrotherhoodLyonsPride
+=Outcasts=
+	BrotherhoodOutcastFaction
+	DLC02OutcastFaction
+	BrotherhoodOutcastGenericFaction
+=Ghouls=
+	UnderworldGhoulFaction
+	GhoulFaction
+	WarringtonGhoulsFaction
+=Chinese=
+	DLC02CombatChineseFaction
+	ChineseGhoulFaction
+=Marked Men=
+	NVDLC04MarkedMenFaction
+=Tribals=
+	NVDLC02TribalsFaction
+	NVDLC02WhiteLegsFaction
+	NVDLC02DeadHorseFaction
+	NVDLC02SorrowsFaction
+	NVDLC02WhiteLegsAggressiveFaction
+	NVDLC02PainMakersFaction
+	NVDLC02BoneBreakersFaction
+	DLC04TribalHostileFaction
+	DLC04TribalFriendlyFaction
+	DLC04TribalGenericFaction
+=Boomers=
+	BoomerFaction
+=Centaurs=
+	CentaurFaction
+=Ghosts=
+	GhostFaction
+=GreatKhans=
+	GreatKhansFactionNV
+	ArmorGreatKhansFactionNV
+	BoulderCityGreatKhanFaction
+=Mirelurks=
+	MirelurkFaction
+=Lakelurks=
+	LakelurkFaction
+	VCrLakeLurkFaction
+=Lobotomites=
+	NVDLC03LobotomiteFaction
+=Powder Gangers=
+	PowderGangerFactionNV
+	NCRCFPowderGangerFaction
+	ArmorPowderGangerFactionnv
+	GoodspringsPowderGangFaction
+	Vault19PowderGangerFaction
+=Spores=
+	SporePlantFaction
+	NVDLC02CrSporeFaction
+=Swampfolk=
+	DLC04SwampfolkFaction
+	DLC04SwampFolkCreeperFaction
+	DLC04SwampFolkScrapperFaction
+	DLC04SwampFolkBrawlerFaction
+	DLC04SwampFolkBruiserFaction
+	DLC04SwampFolkTrackerFaction
+=Talon=
+	TalonCompany
+	CapitalBuildingTalonFaction
+=Trogs=
+	DLC01TrogFaction
+=Tunnelers=
+	NVDLC04TunnelerFaction
+=Tenpenny=
+	TenpennyGuardFaction
+=Misc=
+	CreatureFaction
+	Vault108GaryFaction
+	Vault106LunaticFaction

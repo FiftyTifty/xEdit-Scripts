@@ -1,0 +1,4 @@
+SuperMutantFaction
+MS18SuperMutantFaction
+BlackMountainSuperMutantFaction
+SuperMutantFirstGenFaction

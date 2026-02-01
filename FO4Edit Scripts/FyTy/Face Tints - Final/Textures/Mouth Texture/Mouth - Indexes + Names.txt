@@ -1,0 +1,55 @@
+36EF3554 - Average 1
+36EF3565 - Average 2
+36EF3679 - Average 3
+36EF3684 - Average 4
+36EF368F - Average 5
+36EF3555 - Prominent 1
+36EF3566 - Prominent 2
+36EF367A - Prominent 3
+36EF3685 - Prominent 4
+36EF3690 - Prominent 5
+36EF3556 - Smirk 1
+36EF3567 - Smirk 2
+36EF367B - Smirk 3
+36EF3686 - Smirk 4
+36EF3691 - Smirk 5
+36EF3557 - Downturned 1
+36EF3568 - Downturned 2
+36EF367C - Downturned 3
+36EF3687 - Downturned 4
+36EF3692 - Downturned 5
+36EF3558 - Thin 1
+36EF35FD - Thin 2
+36EF367D - Thin 3
+36EF3688 - Thin 4
+36EF3693 - Thin 5
+36EF355E - Pout 1
+36EF35FE - Pout 2
+36EF367E - Pout 3
+36EF3689 - Pout 4
+36EF3694 - Pout 5
+36EF355F - Long Pout 1
+36EF35FF - Long Pout 2
+36EF367F - Long Pout 3
+36EF368A - Long Pout 4
+36EF3695 - Long Pout 5
+36EF3560 - Thick 1
+36EF3600 - Thick 2
+36EF3680 - Thick 3
+36EF368B - Thick 4
+36EF3696 - Thick 5
+36EF3561 - Full 1
+36EF3601 - Full 2
+36EF3681 - Full 3
+36EF368C - Full 4
+36EF3697 - Full 5
+36EF3562 - Full Pout 1
+36EF3677 - Full Pout 2
+36EF3682 - Full Pout 3
+36EF368D - Full Pout 4
+36EF3698 - Full Pout 5
+36EF3564 - Pursed 1
+36EF3678 - Pursed 2
+36EF3683 - Pursed 3
+36EF368E - Pursed 4
+36EF3699 - Pursed 5

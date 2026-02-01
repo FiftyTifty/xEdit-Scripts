@@ -1,0 +1,9 @@
+VCaesarsLegionFaction
+ArmorVCeasarsLegionFaction
+VCeasarsLegionSnifferFaction
+CaesarsLegionNelsonFaction
+vCaesarsLegionTheFortFaction
+VCaesarsLegionCCoveFaction
+VHooverDamCaesarsLegionfaction
+VCaesarslegionCCoveExplorerFaction
+VCaesarsLegionHELIOSFaction

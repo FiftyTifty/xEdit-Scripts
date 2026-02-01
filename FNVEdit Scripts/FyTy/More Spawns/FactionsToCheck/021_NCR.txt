@@ -1,0 +1,10 @@
+NCRFactionNV
+ArmorNCRFactionNV
+NCRObsolete
+VNCRSnifferFaction
+VNCRStreetFaction
+VNCRHeliosFaction
+VNCRForlornHopeFaction
+VNCRMcCarranPatrollerFaction
+VNCRNelsonFaction
+BoulderCityNCRFaction

@@ -1,0 +1,2 @@
+DLC04HairFemale40_Scarf "DLC04HairFemale40_Scarf" [HDPT:0601951B]
+DLC04HairFemale40_Hairline "DLC04HairFemale40_Hairline" [HDPT:06019519]

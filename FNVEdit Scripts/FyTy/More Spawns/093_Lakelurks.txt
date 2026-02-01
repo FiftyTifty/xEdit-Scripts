@@ -1,0 +1,6 @@
+CrLakelurkCG "Lakelurk" [CREA:00145EDB]
+VSpawnTier3LakelurkMed [CREA:00156784]
+VSpawnTier3LakelurkMed50 [CREA:0015C67F]
+VSpawnTier3LakelurkMed75 [CREA:0015C680]
+CrMirelurk3King "Mirelurk King" [CREA:0007C6EF]
+DLC04crSwamplurkQueen "Swamplurk" [CREA:0A00A56C]

@@ -1,0 +1,8 @@
+DLC04TribalFriendlyFD "Tribal" [NPC_:0A00F3C7]
+NVDLC02WhiteLeg3MAAM "White Legs Pain-Maker" [NPC_:0200A4A6]
+NVDLC02WhiteLeg3MAAMF "White Legs Light-Bringer" [NPC_:0200A4A8]
+NVDLC02WhiteLeg3MCM "White Legs Bone-Breaker" [NPC_:0200A4A7]
+NVDLC02WhiteLeg3SMAAMF "White Legs Storm-Drummer" [NPC_:0200A4AB]
+NVDLC02WhiteLegNarrows "White Legs Tribal" [NPC_:0200A60E]
+NVDLC02WhiteLegPineCreekWave01 [NPC_:0200B6A5]
+NVDLC02WhiteLegPineCreekWave02 [NPC_:0200A60D]

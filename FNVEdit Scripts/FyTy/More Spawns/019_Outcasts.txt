@@ -1,0 +1,3 @@
+LvlOutcastGun [NPC_:0602FAB0]
+LvlOutcastMelee [NPC_:0602FAB1]
+LvlOutcastSpecial [NPC_:0602FAB2]

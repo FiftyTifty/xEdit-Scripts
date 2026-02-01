@@ -1,0 +1,4 @@
+NightkinFaction
+BlackMountainNightkinFaction
+JacobstownNightkinFaction
+REPCONNightkinFaction

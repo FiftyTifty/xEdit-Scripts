@@ -1,0 +1,3 @@
+UnderworldGhoulFaction
+GhoulFaction
+WarringtonGhoulsFaction

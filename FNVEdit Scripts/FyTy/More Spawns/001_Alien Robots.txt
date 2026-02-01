@@ -1,0 +1,6 @@
+DLC05AsmRobotC [CREA:0B009978]
+DLC05LvlRobotMelee [CREA:0B0058CD]
+DLC05LvlRobotRandom [CREA:0B0058E7]
+DLC05LvlRobotRanged [CREA:0B0058E4]
+DLC05LvlRobotRangedPodExLab "Experimental Weapons Drone" [CREA:0B00AD56]
+DLC05ERoomRobot [CREA:0B003C45]

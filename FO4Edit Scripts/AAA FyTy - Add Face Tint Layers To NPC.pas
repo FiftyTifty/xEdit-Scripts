@@ -16,7 +16,7 @@ var
 	
 	bPreventBlemishes, bPreventDamage, bPreventFacePaint, bPreventTattoo, bPreventBlush, bPreventEyeLiner,
 	bPreventEyeShadow, bPreventLipLiner, bPreventLipstick, bPreventMakeupLipDecals, bPreventSkinTints,
-	bPreventMarkings, bPreventLipDecals: boolean;
+	bPreventMarkings, bPreventLipDecals, bPreventGrime: boolean;
 	
 
 function Initialize: integer;
@@ -36,15 +36,16 @@ begin
 	bPreventDamage := false;
 	bPreventFacePaint := true;
 	bPreventTattoo := true;
-	bPreventBlush := false;
-	bPreventEyeLiner := false;
-	bPreventEyeShadow := false;
-	bPreventLipLiner := false;
-	bPreventLipstick := false;
-	bPreventMakeupLipDecals := false;
-	bPreventSkinTints := false;
+	bPreventBlush := true;
+	bPreventEyeLiner := true;
+	bPreventEyeShadow := true;
+	bPreventLipLiner := true;
+	bPreventLipstick := true;
+	bPreventMakeupLipDecals := true;
+	bPreventSkinTints := true;
 	bPreventMarkings := false;
-	bPreventLipDecals := false;
+	bPreventLipDecals := true;
+	bPreventGrime := false;
 	
 end;
 
@@ -637,7 +638,7 @@ end;
 procedure SetSkinTints(eFaceTintingLayers: IInterface);
 var
 	eLayer: IInterface;
-	iRandIndex, iRandColor, iRandIntensity: integer;
+	iRandIndex, iRandColor: integer;
 	strR, strG, strB: string;
 begin
 	AddMessage('Adding skin color');
@@ -648,7 +649,6 @@ begin
 	else
 		iRandIndex := Random(tstrlistSkinTints.Count);
 	
-	iRandIntensity := Random(301) + 700;
 	iRandColor := Random(tstrlistSkinTintsColor.Count);
 	
 	GetRGBFromCLFM(tstrlistSkinTintsColor[iRandColor], strR, strG, strB);
@@ -657,7 +657,7 @@ begin
 	SetLayerIndex(eLayer, tstrlistSkinTints[iRandIndex]);
 	SetLayerColorIndex(eLayer, tstrlistSkinTintsColorIndexes[iRandColor]);
 	SetLayerColorsRGB(eLayer, IntToStr(strR), IntToStr(strG), IntToStr(strB));
-	SetLayerIntensity(eLayer, iRandIntensity / 1000.0);
+	SetLayerIntensity(eLayer, 1.0000);
 end;
 
 procedure SetMarkings(eFaceTintingLayers: IInterface);
@@ -725,14 +725,16 @@ begin
 	
   AddMessage('Processing: ' + FullPath(e));
 	
-	
+	{
 	if ElementExists(e, 'Face Tinting Layers') then
 		Remove(ElementByName(e, 'Face Tinting Layers'));
+	}
 	
-	eFaceTintingLayers := Add(e, 'Face Tinting Layers', false);
+	//eFaceTintingLayers := Add(e, 'Face Tinting Layers', false);
+	eFaceTintingLayers := ElementByPath(e, 'Face Tinting Layers');
 	
 	
-	SetLipColor(ElementByIndex(eFaceTintingLayers, 0)); // Lip Color will use the auto-created, null tint layer
+	//SetLipColor(ElementByIndex(eFaceTintingLayers, 0)); // Lip Color will use the auto-created, null tint layer
 	
 	if not bPreventBlemishes then
 		SetBlemishes(eFaceTintingLayers);
@@ -800,8 +802,8 @@ begin
 			SetLipDecals(eFaceTintingLayers);
 	end;
 	
-	
-	SetSkinTints(eFaceTintingLayers);
+	if not bPreventSkinTints then
+		SetSkinTints(eFaceTintingLayers);
 	
 	if not bPreventMarkings then begin
 		bDoMarkings := Random(2);

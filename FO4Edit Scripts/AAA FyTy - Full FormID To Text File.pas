@@ -5,10 +5,11 @@ var
 
 function Initialize: integer;
 begin
-  tstrlistText := TStringList.Create;
-	strFilePath := ScriptsPath + 'FyTy\Follower Framework\PackageFormIDs.txt';
-end;
 
+  tstrlistText := TStringList.Create;
+	strFilePath := ScriptsPath + 'FyTy\Movable Statics To Items\Fallout4esm Dest.txt';
+	
+end;
 
 function Process(e: IInterface): integer;
 var

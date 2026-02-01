@@ -1,0 +1,15 @@
+RadRoachFaction
+RadScorpionfaction
+NVDLC02CrRadscorpionFaction
+VCrGiantRadscorpionFaction
+NVDLC02CrGiantRadscorpionfaction
+BloatflyFaction
+NVDLC02CrBloatflyFaction
+AntFaction
+MantisFaction
+VCrFireAntFaction
+BlackAntFaction
+NVDLC02CrMantisFaction
+NVDLC02CrAntFaction
+VCrCazadorFaction
+NVDLC02CrCazadorFaction

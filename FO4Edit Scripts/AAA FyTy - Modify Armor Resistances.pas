@@ -269,7 +269,7 @@ begin
 				
 	
 	if bIsChestArmor then
-		SetEditValue(eArmorRating, strArmorResist) //If it's a piece of chest armor, we give it an un-molested armor rating.
+		SetEditValue(eArmorRating, strArmorResist) //If it's a piece of chest armor, we give it an non-reduced armor rating.
 	else
 		SetEditValue(eArmorRating, inttostr(strtoint(strArmorResist) div 2)); //It's not chest armour, so halve it.
 	

@@ -1,0 +1,3 @@
+BrotherhoodOutcastFaction
+DLC02OutcastFaction
+BrotherhoodOutcastGenericFaction

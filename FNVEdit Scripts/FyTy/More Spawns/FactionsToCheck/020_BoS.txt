@@ -1,0 +1,9 @@
+BrotherhoodSteelFactionDC
+BrotherhoodSteelGenericFaction
+BrotherhoodSteelFaction
+ArmorBrotherhoodSteelFaction
+BrotherhoodSteelKnightFaction
+BrotherhoodSteelScribeFaction
+BrotherhoodSteelInitiateFaction
+BrotherhoodJourneymanScribeFaction
+BrotherhoodLyonsPride

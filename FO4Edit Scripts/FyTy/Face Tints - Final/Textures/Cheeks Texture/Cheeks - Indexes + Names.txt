@@ -1,0 +1,5 @@
+36EF3673 - Smooth
+36EF3672 - Weathered
+36EF3674 - Ruddy
+36EF3675 - Creased
+36EF3676 - Wrinkled

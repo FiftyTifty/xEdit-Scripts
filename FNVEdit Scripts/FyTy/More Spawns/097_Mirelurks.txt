@@ -1,0 +1,8 @@
+CrMirelurk1 "Mirelurk" [CREA:0001CF83]
+DLC04LvlMirelurk [CREA:0A00C1E1]
+LvlMirelurk [CREA:0003A6FB]
+MS03LvlMirelurk [CREA:060A6013]
+MS03LvlMirelurkAmbush [CREA:0605C3AA]
+MS05LvlNukaColaMirelurk [CREA:060854D5]
+OasisMirelurkAmbusher "Mirelurk" [CREA:00047E8B]
+PotomacGuardLurks01 [CREA:000CAAC0]

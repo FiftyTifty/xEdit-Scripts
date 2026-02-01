@@ -1,0 +1,3 @@
+NVDLC03LobotomiteLvl [NPC_:0300A941]
+NVDLC03LobotomiteLvlRespawn [NPC_:03014D8A]
+NVDLC03X8LobotomiteLvl [NPC_:03015505]
